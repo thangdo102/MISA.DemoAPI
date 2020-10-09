@@ -1,0 +1,277 @@
+﻿/*CSS cho sideBar*/
+
+/*body {
+    font-family: 'Tahoma_Regular';
+}*/
+
+.sidebar {
+    width: 200px;
+    background-color: #006dbc !important;
+    height: 100vh; /*chiều dài tối đa của thằng cha chứa nó*/
+    float: left;
+}
+
+@font-face {
+    font-family: 'Tahoma_Regular';
+    src: url('/content/fonts/Tahoma_Regular.woff') format('woff');
+}
+
+.sidebar .logo {
+        display: flex;
+        height: 50px;
+        width: 100%;
+        padding-left:10px;
+    }
+
+.sidebar .menu{
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.logo .icon-left-header {
+    width: 25px;
+    height: 100%;
+    background-image: url('/content/img/icon-left-header.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo .logo-text {
+    width: 100%;
+    height: 100%;
+    background-image: url('/content/img/logo-text.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 12px;
+}
+
+
+/*Menu*/
+
+.menu .menu-item:hover {
+    background-color: #ff6a00;
+}
+
+.menu .menu-item {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #076aac;
+    border-top: 1px solid #0a7cc9;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.menu .menu-item-icon-listdown {
+    background-image: url('/content/img/arraw.png');
+    background-repeat:no-repeat;
+    width: 17px;
+    height: 17px;
+    align-self:center;
+    margin-left:65px;
+}
+
+
+.menu .menu-item-text {
+    color: aliceblue;
+    margin-left: 8px;
+}
+.menu .menu-item-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -1px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-report {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -194px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-buy {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -377px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+
+.menu .menu-item-icon-warehouse {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -40px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-monney {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -79px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+
+
+.menu .menu-item-icon-monney2 {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/icon-deposit.png');
+    background-repeat: no-repeat;
+ /*   background-position-y: -40px;*/
+    align-self: center;
+    margin-left: 11px;
+}
+.menu .menu-item-text-monney2 {
+    color: aliceblue;
+    margin-left: 3px;
+}
+
+
+.menu .menu-item-icon-cost {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/icon-cost.png');
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 8px;
+}
+.menu .menu-item-text-cost {
+    color: aliceblue;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-sale {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -118px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-menu {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/vector-smart-object.png');
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 10px;
+}
+.menu .menu-item-text-menu {
+    color: aliceblue;
+    margin-left: 4px;
+}
+
+.menu .menu-item-icon-cate {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -155px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-bill {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/cancel-invoice.png');
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 8px;
+}
+.menu .menu-item-text-bill {
+    color: aliceblue;
+    margin-left: 6px;
+}
+
+
+.menu .menu-item-icon-system {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -234px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-app {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -40px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-online {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconMenu.png');
+    background-repeat: no-repeat;
+    background-position-y: -80px;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-icon-food {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/5food.png');
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 6px;
+}
+.menu .menu-item-text-food {
+    color: aliceblue;
+    margin-left: 6px;
+}
+
+
+.menu .menu-item-icon-help {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/iconHelp.png');
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 6px;
+}
+.menu .menu-item-text-help {
+    color: aliceblue;
+    margin-left: 6px;
+}
+
+
+.menu .menu-item-icon-phone {
+    width: 25px;
+    height: 25px;
+    background-image: url('/content/img/icon-subscriber.png');
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 6px;
+}
+
+.menu .menu-item-text-phone {
+    color: aliceblue;
+    margin-left: 6px;
+}
+

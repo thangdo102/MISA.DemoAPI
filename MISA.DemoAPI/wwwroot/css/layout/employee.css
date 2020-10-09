@@ -1,0 +1,191 @@
+﻿/*body {
+    margin: 0px !important;
+    font-family: 'Tahoma_Regular';*/
+    /*background-size: 100%;*/
+/*}*/
+
+/*@font-face {
+    font-family: 'tahoma_regular';
+    src: url('/content/fonts/tahoma_regular.woff') format('woff');
+}
+
+
+.employee-background {
+    position: absolute;
+    width: 735px;
+    top: calc(50% - 200px);
+    left: calc(50% - 400px);
+    height: 425px;
+    background-color: #0068b2;
+    display: block;
+}
+
+.employee-background .employee-table{
+        background-color: #ffffff;
+        width: 98%;
+        height: 88%;
+        margin: auto;
+        padding-top: 10px;
+    }
+
+.employee-background .employee-name {
+        color: #ffffff;
+        width: 98%;
+        height: 8%;
+        background-color: #0068b2;
+        margin: auto;
+        display: flex;
+        position: relative;
+        margin-top:1px;
+    }
+
+.employee-background .employee-name-employee{
+        align-self: center;
+    }
+
+.employee-name-button {
+    width: 8px;
+    height: 15px;
+    background-image: url('/content/img/cancel.png');
+    background-repeat: no-repeat;
+    float: right;
+    position: absolute;
+    right: 1px;
+    top: 10px;
+}
+
+.table-content {
+    width:  100%;
+    height: 90%;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.employee-table .table-footer {
+    width: 100%;
+    height: 10%;
+    background-color: #ffffff;
+    display: flex;
+}*/
+
+
+/*HELP button*/
+/*.employee-table .footer-help {
+    display: flex;
+    height: 75%;
+    width: 10%;
+    border: 1px solid #d1d1d0;
+    margin-left:2%;
+    outline: none;
+}
+
+.employee-table .footer-help-icon {
+    background: url('/content/img/IconSprite.png') no-repeat 0 -1793px;
+    width: 15px;
+    height: 14px;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+
+.employee-table .footer-help-text {
+    height: 70%;
+    width: 80%;
+    text-align: center;
+    margin-top: 3px;
+}*/ 
+
+
+/*CUT Button*/
+/*.employee-table .footer-cut {
+    display: flex;
+    height: 75%;
+    width: 10%;
+    border: 1px solid #d1d1d0;
+    margin-left: 2%;
+    outline: none;
+}
+
+.employee-table .footer-cut-icon {
+    background: url(/content/img/IconSprite.png) no-repeat 0 -2032px;
+    width: 27px;
+    height: 14px;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+.employee-table .footer-cut-text {
+    height: 70%;
+    width: 80%;
+    text-align: center;
+    margin-top: 5px;
+}*/
+
+
+/*ADD Button*/
+
+/*.employee-table .footer-add {
+    display: flex;
+    height: 76%;
+    width: 18%;
+    border: 1px solid #d1d1d0;
+    margin-left: 2%;
+    outline: none;
+}
+
+.employee-table .footer-add-icon {
+    background: url('/content/img/IconSprite.png') no-repeat 0 -1872px;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    margin-left: 8px;
+}
+
+.employee-table .footer-add-text {
+    height: 70%;
+    width: 70%;
+    text-align: end;
+    margin-top: 4px;
+}*/
+
+
+/*CANCEL Button*/
+/*.employee-table .footer-cancel {
+    display: flex;
+    height: 76%;
+    width: 13%;
+    border: 1px solid #d1d1d0;
+    margin-left: 2%;
+    outline: none;
+}
+
+.employee-table .footer-cancel-icon {
+    background: url(/content/img/IconSprite.png) no-repeat 0 -1952px;
+    width: 17px;
+    height: 15px;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+.employee-table .footer-cancel-text {
+    height: 70%;
+    width: 67%;
+    text-align: inherit;
+    margin-top: 4px;
+}
+
+.employee-table .footer-space-text{
+    height: 70%;
+    width: 38.9%;
+}*/
+/*footer*/
+/*.table-footer-content {
+    width: 100%;
+    height: 100%;
+}
+
+.employee-table td{
+    width:25%;
+    padding-left: 8px;
+}*/
+

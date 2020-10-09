@@ -1,0 +1,311 @@
+﻿/*dialog cất và sửa*/
+.model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: .4;
+}
+
+@font-face {
+    font-family: 'tahoma_regular';
+    src: url('/content/fonts/tahoma_regular.woff') format('woff');
+}
+
+
+.employee-background {
+    position: absolute;
+    width: 735px;
+    top: calc(50% - 200px);
+    left: calc(50% - 400px);
+    height: 426px;
+    background-color: #0068b2;
+    display: block;
+}
+
+    .employee-background .employee-table {
+        background-color: #ffffff;
+        width: 98%;
+        height: 88%;
+        margin: auto;
+        padding-top: 7px;
+    }
+
+    .employee-background .employee-name {
+        color: #ffffff;
+        width: 98%;
+        height: 8%;
+        background-color: #0068b2;
+        margin: auto;
+        display: flex;
+        position: relative;
+        margin-top: 1px;
+    }
+
+    .employee-background .employee-name-employee {
+        align-self: center;
+    }
+
+.employee-name-button {
+    width: 8px;
+    height: 15px;
+    background-image: url('/content/img/cancel.png');
+    background-repeat: no-repeat;
+    float: right;
+    position: absolute;
+    right: 1px;
+    top: 10px;
+}
+
+.table-content {
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.employee-table .table-footer {
+    width: 100%;
+    height: 10%;
+    background-color: #ffffff;
+    display: flex;
+    margin-top: 10px;
+}
+
+
+/*HELP button*/
+.employee-table .footer-help {
+    display: flex;
+    height: 81%;
+    width: 10%;
+    border: 1px solid #d1d1d0;
+    margin-left: 1%;
+    outline-color: #006dbc;
+}
+
+.employee-table .footer-help-icon {
+    background: url('/content/img/IconSprite.png') no-repeat 0 -1793px;
+    width: 15px;
+    height: 14px;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+
+.employee-table .footer-help-text {
+    height: 70%;
+    width: 80%;
+    text-align: center;
+    margin-top: 7px;
+}
+
+
+/*CUT Button*/
+.employee-table .footer-cut {
+    display: flex;
+    height: 81%;
+    width: 10%;
+    border: 1px solid #d1d1d0;
+    margin-left: 4.8%;
+    outline-color: #006dbc;
+}
+
+.employee-table .footer-cut-icon {
+    background: url(/content/img/IconSprite.png) no-repeat 0 -2032px;
+    width: 27px;
+    height: 14px;
+    margin-top: 6px;
+    margin-left: 8px;
+}
+
+.employee-table .footer-cut-text {
+    height: 70%;
+    width: 80%;
+    text-align: center;
+    margin-top: 7px;
+}
+
+
+/*ADD Button*/
+
+.employee-table .footer-add {
+    display: flex;
+    height: 81%;
+    width: 18%;
+    border: 1px solid #d1d1d0;
+    margin-left: 2%;
+    outline-color: #006dbc;
+}
+
+.employee-table .footer-add-icon {
+    background: url('/content/img/IconSprite.png') no-repeat 0 -1872px;
+    width: 15px;
+    height: 15px;
+    margin-top: 6px;
+    margin-left: 8px;
+}
+
+.employee-table .footer-add-text {
+    height: 70%;
+    width: 70%;
+    text-align: end;
+    margin-top: 7px;
+}
+
+
+/*CANCEL Button*/
+.employee-table .footer-cancel {
+    display: flex;
+    height: 81%;
+    width: 13%;
+    border: 1px solid #d1d1d0;
+    margin-left: 2%;
+    outline-color: #006dbc;
+}
+
+.employee-table .footer-cancel-icon {
+    background: url(/content/img/IconSprite.png) no-repeat 0 -1952px;
+    width: 17px;
+    height: 15px;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.employee-table .footer-cancel-text {
+    height: 70%;
+    width: 67%;
+    text-align: inherit;
+    margin-top: 7px;
+}
+
+.employee-table .footer-space-text {
+    height: 70%;
+    width: 38.3%;
+}
+/*footer*/
+.table-footer-content {
+    width: 100%;
+    height: 100%;
+}
+
+.employee-table td {
+    width: 25%;
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
+
+.employee-background .employee-tableInfor {
+    background-color: #ffffff;
+    width: 96%;
+    height: 86%;
+    margin: auto;
+    padding: 10px;
+}
+
+.employee-tableInfor input {
+    height: 25px;
+    border: 1px solid #cfcfce;
+    padding: 0 4px;
+    outline: none;
+}
+
+    .employee-tableInfor input:focus {
+        border: 1px solid #0068b2;
+    }
+
+.row {
+    margin-bottom: 8px;
+}
+
+label {
+    display: block;
+}
+
+.employee-tableInfor .dialog-footer {
+    height: 40px;
+    border-top: 1px solid #0068b2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.employee-tableInfor .table-contentInfor {
+    height: 91%;
+}
+
+.employee-tableInfor button {
+    width: 75px;
+    padding: 4px;
+    height: 25px;
+    align-self: center;
+    margin-right: 8px;
+}
+
+
+/*
+    Css này dùng để: khi người dùng k nhập các trường dữ liệu bắt buộc 
+    như EmployeeName hoặc EmployeeCode, thì border của ô text sẽ chuyển màu 
+*/
+.require-error {
+    border: 1px solid #f00 !important;
+}
+
+
+
+/*CSS của dialog Yes/no question*/
+
+.yesNo-background {
+    position: absolute;
+    width: 300px;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+    height: 100px;
+    background-color: #0068b2;
+    display: block;
+}
+
+.yesNo-header {
+    width: 95%;
+    height: 8%;
+    background-color: #0068b2;
+    margin: auto;
+    color: #ffffff;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+.yesNo-Content {
+    width: 98%;
+    height: 48%;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 9px;
+}
+
+    .yesNo-Content p {
+        color: black;
+    }
+
+.yesNo-button {
+    width: 61px;
+    height: 24px;
+    justify-content: flex-end;
+    float: right;
+    margin-right: 10px;
+}
+
+.yesNo-footer {
+    width: 98%;
+    height: 28%;
+    background-color: #ffffff;
+    margin: auto;
+    border: none;
+}
+
+#yesNo-question{
+    line-height: 50px;
+    margin-left: 10px;
+}
