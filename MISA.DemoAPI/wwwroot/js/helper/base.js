@@ -11,7 +11,7 @@ class BaseJS {
         this.getData();
         this.loadData();
         this.initEventEmp();
-        this.onHiddenDialog();
+      /*  this.onHiddenDialog();*/
         this.onHiddenDialogConfirm();
     }
 

@@ -304,26 +304,100 @@
                 <div class="employee-tableInfor">
 
                     <div class="table-contentInfor">
-                        <div class="row">
-                            <label>Mã nhân viên(*)</label>
-                            <input fieldName="EmployeeCode" id="txtEmployeeCode" required type="text" />
+                        <div>
+                            <label class="textFontWeight">Thông tin chung</label>
                         </div>
-                        <div class="row">
-                            <label>Tên nhân viên(*)</label>
-                            <input fieldName="FullName" id="txtEmployeeName" required type="text" />
+
+                        <div class="commonInfor-input">
+                            <div class="infoInput-text">
+                                <table>
+                                    <tr>
+                                        <td>Mã nhân viên <span style="color:red">(*)</span></td>
+                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tên nhân viên <span style="color:red">(*)</span></td>
+                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ngày sinh</td>
+                                        <td><input style="width: 166px" type="date" /></td>
+                                        <td>Giới tính</td>
+                                        <td>
+                                            <select style="width: 98.2%; height: 25px;" id="gender">
+                                                <option value="male">Nam</option>
+                                                <option value="female">Nữ</option>
+                                                <option value="other">Khác</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email <span style="color:red">(*)</span></td>
+                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ĐT di động <span style="color:red">(*)</span></td>
+                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Số CMT</td>
+                                        <td><input type="text" /></td>
+                                        <td>Ngày cấp</td>
+                                        <td><input style="width: 92.9%" type="date" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nơi cấp CMT</td>
+                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="infoInput-img">Image</div>
                         </div>
-                        <div class="row">
-                            <label>Địa chỉ</label>
-                            <input fieldName="Address" id="txtEmployeeAddress" type="text" />
-                        </div>
-                        <div class="row">
-                            <label>Số ĐT</label>
-                            <input fieldName="Phone" id="txtEmployeeMobile" type="text" />
-                        </div>
-                        <div class="row">
-                            <label>Email</label>
-                            <input emailCheck fieldName="Email" id="txtEmployeeEmail" type="text" />
-                        </div>
+
+                        <div class="textFontWeight" style="margin-top: 7px"><label>Thông tin công việc</label></div>
+
+                        <table style="margin-top: 8px">
+                            <tr>
+                                <td style="width: 116px">Vị trí</td>
+                                <td>
+                                    <select class="inputSelected" id="gender">
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phòng ban</td>
+                                <td>
+                                    <select class="inputSelected" id="gender">
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mã số thuế cá nhân</td>
+                                <td><input type="text" /></td>
+                                <td>Mức lương</td>
+                                <td><input type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td>Ngày gia nhập</td>
+                                <td><input type="date" /></td>
+                                <td>Tình trạng</td>
+                                <td>
+                                    <select id="gender">
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+
                     </div>
 
                     <div class="dialog-footer">

@@ -20,7 +20,7 @@
     width: 735px;
     top: calc(50% - 200px);
     left: calc(50% - 400px);
-    height: 426px;
+    height: 490px;
     background-color: #0068b2;
     display: block;
 }
@@ -32,6 +32,8 @@
         margin: auto;
         padding-top: 7px;
     }
+
+
 
     .employee-background .employee-name {
         color: #ffffff;
@@ -93,6 +95,9 @@
     margin-left: 5px;
 }
 
+.employee-inputInforCommon{
+    width: 210%;
+}
 
 .employee-table .footer-help-text {
     height: 70%;
@@ -200,7 +205,7 @@
 .employee-background .employee-tableInfor {
     background-color: #ffffff;
     width: 96%;
-    height: 86%;
+    height: 86.5%;
     margin: auto;
     padding: 10px;
 }
@@ -236,6 +241,23 @@ label {
     height: 91%;
 }
 
+.commonInfor-input {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 8px;
+}
+
+.infoInput-text {
+    width: 80%;
+    height: 210px;
+}
+
+.infoInput-img {
+    width: 20%;
+    height: 140px;
+    background-color: blue;
+}
+
 .employee-tableInfor button {
     width: 75px;
     padding: 4px;
@@ -244,6 +266,18 @@ label {
     margin-right: 8px;
 }
 
+
+.textFontWeight {
+    font-weight: 900;
+    border-bottom: 1px solid #cacac7;
+    height: 15px;
+    line-height: 50%;
+}
+
+.inputSelected {
+    height: 25px;
+    width: 238%;
+}
 
 /*
     Css này dùng để: khi người dùng k nhập các trường dữ liệu bắt buộc 
@@ -305,7 +339,7 @@ label {
     border: none;
 }
 
-#yesNo-question{
+#yesNo-question {
     line-height: 50px;
     margin-left: 10px;
 }

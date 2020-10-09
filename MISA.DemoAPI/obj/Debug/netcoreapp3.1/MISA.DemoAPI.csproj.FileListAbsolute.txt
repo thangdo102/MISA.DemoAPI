@@ -16,3 +16,7 @@ D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\staticwebassets
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.dll
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.pdb
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.genruntimeconfig.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CoreCompileInputs.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CopyComplete
