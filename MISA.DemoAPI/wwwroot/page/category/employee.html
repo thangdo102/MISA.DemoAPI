@@ -244,9 +244,13 @@
                             <tr>
                                 <th fieldName="EmployeeCode" format="validateString">Mã nhân viên</th>
                                 <th title="With channels in Slack, you and your team know where to go to ask questions, share updates and stay in the loop." fieldName="FullName" format="validateString">Tên nhân viên....</th>
-                                <th fieldName="Address" format="validateString">Địa chỉ</th>
-                                <th fieldName="Phone" format="validateNumber">Số điện thoại</th>
+                                <th fieldName="Gender" format="validateString">Giới tính</th>
+                                <th fieldName="DateOfBirth" format="validateNumber">Ngày sinh</th>
                                 <th fieldName="Email" format="validateString">Email</th>
+                                <th fieldName="Position" format="validateString">Vị trí</th>
+                                <th fieldName="Department" format="validateNumber">Phòng ban</th>
+                                <th fieldName="Salary" format="validateString">Mức lương</th>
+                                <th fieldName="WorkStatus" format="validateString">Tình trạng công việc</th>
                             </tr>
                         </thead>
 
@@ -324,7 +328,7 @@
                                         <td><input style="width: 166px" type="date" /></td>
                                         <td>Giới tính</td>
                                         <td>
-                                            <select style="width: 95.8%; height: 25px;" id="gender">
+                                            <select style="width: 97.8%; height: 25px;" id="gender">
                                                 <option value="male">Nam</option>
                                                 <option value="female">Nữ</option>
                                                 <option value="other">Khác</option>
@@ -343,7 +347,8 @@
                                         <td>Số CMT</td>
                                         <td><input style="width: 168px;" type="text" /></td>
                                         <td>Ngày cấp</td>
-                                        <td><input style="width: 88.9%" type="date" /></td>
+                                        <td><input style="width: 91.7%" type="date" /></td>
+                                        
                                     </tr>
                                     <tr>
                                         <td>Nơi cấp CMT</td>
@@ -351,7 +356,11 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="infoInput-img">Image</div>
+                            <div class="infoInput-imgCommon">
+                                <div class="infoInput-img">Image</div>
+                                <div class="infoInput-textImage">Vui lòng up ảnh với định dạng png và jpg</div>
+                            </div>
+
                         </div>
 
                         <div class="textFontWeight" style="margin-top: 7px"><label>Thông tin công việc</label></div>
@@ -380,14 +389,14 @@
                                 <td>Mã số thuế cá nhân</td>
                                 <td><input type="text" class="infoInput-text2" /></td>
                                 <td>Mức lương</td>
-                                <td><input type="text" class="infoInput-text2" /></td>
+                                <td><input style="width: 97%" type="text" class="infoInput-text2" /></td>
                             </tr>
                             <tr>
                                 <td>Ngày gia nhập</td>
                                 <td><input class="infoInput-text2" type="date"/></td>
                                 <td>Tình trạng</td>
                                 <td>
-                                    <select class="workStatus" id="gender" >
+                                    <select style="width: 100.2%" class="workStatus" id="workStatus" >
                                         <option value="male">Đang làm việc</option>
                                         <option value="female">Nghỉ việc</option>
                                         <option value="other">Khác</option>
@@ -400,7 +409,7 @@
                     </div>
 
                     <div class="dialog-footer">
-                        <button id="btnAddNew">
+                        <button style="margin-right: 10px" id="btnAddNew">
 
                             <div class="footer-add-icon"></div>
                             Cất

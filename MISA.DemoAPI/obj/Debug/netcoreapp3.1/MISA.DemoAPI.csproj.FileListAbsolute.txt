@@ -20,3 +20,25 @@ D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MySqlConnector.
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CoreCompileInputs.cache
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CopyComplete
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DemoAPI.exe
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DemoAPI.deps.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DemoAPI.runtimeconfig.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DemoAPI.runtimeconfig.dev.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DemoAPI.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DemoAPI.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csprojAssemblyReference.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.AssemblyInfoInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.AssemblyInfo.cs
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CoreCompileInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.RazorTargetAssemblyInfo.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CopyComplete
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\staticwebassets\MISA.DemoAPI.StaticWebAssets.Manifest.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\staticwebassets\MISA.DemoAPI.StaticWebAssets.xml
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.genruntimeconfig.cache
