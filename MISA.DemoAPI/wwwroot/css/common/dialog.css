@@ -68,6 +68,14 @@
     margin-left: 5px;
 }
 
+.infoInput-text2{
+    width: 93%;
+}
+
+.workStatus{
+    width: 97%;
+    height: 25px;
+}
 .employee-table .table-footer {
     width: 100%;
     height: 10%;
@@ -276,7 +284,7 @@ label {
 
 .inputSelected {
     height: 25px;
-    width: 238%;
+    width: 242%;
 }
 
 /*
