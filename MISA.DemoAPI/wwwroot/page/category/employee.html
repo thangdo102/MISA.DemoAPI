@@ -242,15 +242,15 @@
                     <table id="tbListData" class="content-table1" border="1" cellpadding="0" keyId="EmployeeId">
                         <thead>
                             <tr>
-                                <th fieldName="EmployeeCode" format="validateString">Mã nhân viên</th>
-                                <th title="With channels in Slack, you and your team know where to go to ask questions, share updates and stay in the loop." fieldName="FullName" format="validateString">Tên nhân viên....</th>
-                                <th fieldName="Gender" format="validateString">Giới tính</th>
-                                <th fieldName="DateOfBirth" format="validateNumber">Ngày sinh</th>
-                                <th fieldName="Email" format="validateString">Email</th>
-                                <th fieldName="Position" format="validateString">Vị trí</th>
-                                <th fieldName="Department" format="validateNumber">Phòng ban</th>
-                                <th fieldName="Salary" format="validateString">Mức lương</th>
-                                <th fieldName="WorkStatus" format="validateString">Tình trạng công việc</th>
+                                <th fieldName="employeeCode" format="validateString">Mã nhân viên</th>
+                                <th fieldName="employeeName" title="With channels in Slack, you and your team know where to go to ask questions, share updates and stay in the loop." format="validateString">Tên nhân viên....</th>
+                                <th fieldName="gender" format="validateString">Giới tính</th>
+                                <th fieldName="dateOfBirth" format="validateDate" formatDate="date" >Ngày sinh</th>
+                                <th fieldName="email" format="validateString">Email</th>
+                                <th fieldName="positionName" format="validateString">Vị trí</th>
+                                <th fieldName="departmentName" format="validateString">Phòng ban</th>
+                                <th fieldName="salary" format="validateNumber" formatSalary="validateSalary">Mức lương</th>
+                                <th fieldName="workStatus" format="validateString">Tình trạng công việc</th>
                             </tr>
                         </thead>
 
@@ -317,18 +317,18 @@
                                 <table>
                                     <tr>
                                         <td>Mã nhân viên <span style="color:red">(*)</span></td>
-                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>Tên nhân viên <span style="color:red">(*)</span></td>
-                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>Ngày sinh</td>
                                         <td><input style="width: 166px" type="date" /></td>
                                         <td>Giới tính</td>
                                         <td>
-                                            <select style="width: 97.8%; height: 25px;" id="gender">
+                                            <select style="width: 97.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
                                                 <option value="male">Nam</option>
                                                 <option value="female">Nữ</option>
                                                 <option value="other">Khác</option>
@@ -337,18 +337,18 @@
                                     </tr>
                                     <tr>
                                         <td>Email <span style="color:red">(*)</span></td>
-                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>ĐT di động <span style="color:red">(*)</span></td>
-                                        <td><input class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>Số CMT</td>
                                         <td><input style="width: 168px;" type="text" /></td>
                                         <td>Ngày cấp</td>
                                         <td><input style="width: 91.7%" type="date" /></td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <td>Nơi cấp CMT</td>
@@ -393,10 +393,10 @@
                             </tr>
                             <tr>
                                 <td>Ngày gia nhập</td>
-                                <td><input class="infoInput-text2" type="date"/></td>
+                                <td><input class="infoInput-text2" type="date" /></td>
                                 <td>Tình trạng</td>
                                 <td>
-                                    <select style="width: 100.2%" class="workStatus" id="workStatus" >
+                                    <select style="width: 100.2%" class="workStatus" id="workStatus">
                                         <option value="male">Đang làm việc</option>
                                         <option value="female">Nghỉ việc</option>
                                         <option value="other">Khác</option>

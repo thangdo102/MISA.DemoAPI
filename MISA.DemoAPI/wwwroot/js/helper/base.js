@@ -11,7 +11,7 @@ class BaseJS {
         this.getData();
         this.loadData();
         this.initEventEmp();
-      /*  this.onHiddenDialog();*/
+        this.onHiddenDialog();
         this.onHiddenDialogConfirm();
     }
 
@@ -28,23 +28,21 @@ class BaseJS {
     *  Author: DVTHANG(23/09/2020)
     * */
     loadData() {
-      
+
 
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
 
         $.ajax({
-            url: "api/EmployeeApi",
+
+            url: "/api/EmployeeApi",
             method: "GET",
             data: "",
             contentType: "application/json",
             dataType: ""
 
         }).done(function (response) {
+
             var fields = $('table#tbListData thead th');  //lấy tất cả các th  
-
-            var keyId = $('table#tbListData').attr('keyId');
-
-            this.Data = response;  //lưu mảng dữ liệu vào biến data
             $('#tbListData tbody').empty();
             $.each(response, function (index, obj) {   //duyệt từng phần tử của mảng các đối tượng 
                 var tr = $(`<tr></tr>`);   //tạo ra <tr>
@@ -52,42 +50,42 @@ class BaseJS {
                 $.each(fields, function (index, field) {    //duyệt từng phần tử th
                     var fieldName = $(field).attr(`fieldName`);   //lấy giá trị của thuộc tính fieldName rồi lưu vào biến fieldName
 
-
                     //format cho các cột money
                     var formatSalary = $(field).attr(`formatSalary`);
-                    /*   var formatDate = $(field).attr(`format`);*/
+                    /*var formatDate = $(field).attr(`formatDate`);*/
                     if (formatSalary == 'validateSalary') {
                         var value = (obj[fieldName]).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
                     } /*else if (formatDate == 'date') {
                         var value = commonJS.formatDate((obj[fieldName]));
                     }*/
+
                     else {
                         var value = (obj[fieldName] || (" "));  // obj[fieldName] giống với customer.[CustomerCode], ||(" ") là nếu bị sai trường, sẽ hiển thị khoảng trắng thay vì hiển thị underfine
                     }
 
                     var td = $(`<td>` + value + `</td>`);   //tạo ra các td
 
-                    //validate number, string, định dạng money
+                    //căn chỉnh trái phải giữa cho number, string, date, money
                     var format = $(field).attr(`format`);
                     if (format == "validateString") {
                         td.addClass('validateString');
                     } else if (format == "validateNumber") {
                         td.addClass('validateNumber');
-                    } else if (format == "date") {
+                    } else if (format == "validateDate") {
                         td.addClass('validateDate');
                     }
                     //hiển thị row-selected lên dialog
-                    $(tr).data('keyId', obj[keyId]); //lưu CustomerId vào attribute keyId
                     $(tr).data('data', obj); // lưu cả object vào attribute là data
                     $(tr).append(td); //append từng thằng td vào tr
-
+                    debugger
                 })
 
                 $('#tbListData tbody').append(tr);
             })
+            debugger
 
         }).fail(function response() {
-
+            debugger
         })
     }
 
@@ -249,22 +247,22 @@ class BaseJS {
             alert("Vui long chon row ban muon xoa!");
         } else {
             this.onShowDialogConfirm();
-           /* $.ajax({
-                url: "/customer/" + id,
-                method: "DELETE"
-            }).done(function (response) {
-                if (response) {
-                    alert("xoa thanh cong");
-                   
-                } else {
-                    alert("Customer ko ton tai!");
-                }
-                self.loadData();
-            }).fail(function () {
-                alert("Vui long kiem tra lai");
-            })*/
+            /* $.ajax({
+                 url: "/customer/" + id,
+                 method: "DELETE"
+             }).done(function (response) {
+                 if (response) {
+                     alert("xoa thanh cong");
+                    
+                 } else {
+                     alert("Customer ko ton tai!");
+                 }
+                 self.loadData();
+             }).fail(function () {
+                 alert("Vui long kiem tra lai");
+             })*/
         }
-        
+
     }
 
     /**
@@ -284,7 +282,7 @@ class BaseJS {
                 alert("Customer ko ton tai!");
             }
             self.loadData();
-           
+
         }).fail(function () {
             alert("Vui long kiem tra lai");
         })
@@ -392,7 +390,7 @@ class BaseJS {
     * Author: DVTHANG(25/05/2020)
     * */
     onShowDialogAdd() {
-        
+
         $('.table-contentInfor input').val(null);  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
         $(".employee-background").show();
         $(".model").show();

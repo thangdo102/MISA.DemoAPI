@@ -129,8 +129,9 @@
 }
 
 .workStatus {
-    width: 97%;
     height: 25px;
+    outline: none;
+    border-color: #cacac7;
 }
 
 .employee-table .table-footer {
@@ -289,7 +290,7 @@ label {
 
 .employee-tableInfor .dialog-footer {
     height: 40px;
-    border-top: 1px solid #0068b2;
+    border-top: 1px solid #cacac7;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -347,6 +348,8 @@ label {
 .inputSelected {
     height: 25px;
     width: 238%;
+    outline: none;
+    border-color: #cacac7;
 }
 
 /*
