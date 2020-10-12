@@ -48,11 +48,12 @@ namespace MISA.DemoAPI.Controllers
                     //Lấy giá trị của cột hiện tại
                     var columnValue = mySqlDataReader.GetValue(i);
                     //Lấy ra property giống với tên cột được khai báo ở trên
-                    var property = employee.GetType().GetProperty(columnName);
+                    var property = employee.GetType().GetProperty(columnName);  //giống với employee.EmployeeId = mySqlDataReader.getGuid(0);
                     //nếu có property tương ứng với tên cột thì gán dữ liệu tương ứng
                     if (property != null && columnValue != DBNull.Value)  //value và property phải có giá trị thì mới thực hiện gán
                     {
-                        property.SetValue(employee, columnValue);
+
+                        property.SetValue(employee, columnValue);  //gán giá trị của column cho đối tượng employee
                     }
                 }
                 //thêm đối tượng khách hàng vừa khởi tạo vào list Employees
