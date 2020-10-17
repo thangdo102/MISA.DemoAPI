@@ -5,15 +5,25 @@ using System.Text;
 
 namespace MISA.DataAccessLayer.Repository
 {
+    /// <summary>
+    /// Hàm dùng chung của Repository
+    /// Author: DVTHANG(16/10/2020)
+    /// </summary>
+    /// <typeparam name="T">Đối tượng tương ứng</typeparam>
     public class BaseRepository<T> : IBaseRepository<T>
     {
-        protected IDatabaseContext<T> _databaseContext;
+        #region declare
+        public IDatabaseContext<T> _databaseContext;
+        #endregion
 
+        #region constructor
         public BaseRepository(IDatabaseContext<T> databaseContext)
         {
             _databaseContext = databaseContext;
         }
+        #endregion
 
+        #region method
         public int Delete(Guid entityId)
         {
             return _databaseContext.Delete(entityId);
@@ -38,5 +48,6 @@ namespace MISA.DataAccessLayer.Repository
         {
             return _databaseContext.update(entity);
         }
+        #endregion
     }
 }

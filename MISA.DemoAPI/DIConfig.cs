@@ -13,21 +13,26 @@ using System.Threading.Tasks;
 namespace MISA.DemoAPI
 {
     /// <summary>
-    /// Hàm để config xem Các Interface sẽ sử dụng CLass, ví dụ IEmployeeRepository sẽ config với EmployeeRepository để lấy data chứ ko phải DepartmentRepository 
+    /// Hàm để config Các Interface sẽ sử dụng CLass nào mà cần dùng, ví dụ IEmployeeRepository sẽ config với EmployeeRepository để lấy data chứ ko phải DepartmentRepository 
     ///Author: DVTHANG(15/10/2020)
     ///</summary>
     public class DIConfig
     {
-
         public static void InjectionConfig(IServiceCollection services)
         {
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IDepartmentService, DepartmentService>();
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
-            services.AddScoped(typeof(IDatabaseContext<>), typeof(IDatabaseContext<>));
-            services.AddScoped(typeof(IBaseRepository<>), typeof(IBaseRepository<>));
-            services.AddScoped(typeof(IBaseService<>), typeof(IBaseService<>));
+
+            services.AddScoped<IPositionRepository, PositionRepository>();
+            services.AddScoped<IPositionService, PositionService>();
+
+            services.AddScoped(typeof(IDatabaseContext<>), typeof(DatabaseContext<>));
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
         }
     }
 }

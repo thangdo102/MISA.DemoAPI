@@ -11,10 +11,13 @@ using MySqlConnector;
 
 namespace MISA.DemoAPI.Controllers
 {
+    /// <summary>
+    /// Api controller của Department
+    /// Author: DVTHANG(17/10/2020)
+    /// </summary>
     [Route("api/departments")]
     public class DepartmentApi : BaseApi<Department>
     {
-
         public DepartmentApi(IDepartmentService departmentService) : base(departmentService)
         {
         }

@@ -14,11 +14,13 @@ using MySqlConnector;
 
 namespace MISA.DemoAPI.Controllers
 {
+    /// <summary>
+    /// Api controller của Employee
+    /// Author: DVTHANG(16/10/2020)
+    /// </summary>
     [Route("api/employees")]
     public class EmployeeApi : BaseApi<Employee>
     {
-
-
         public EmployeeApi(IEmployeeService employeeService) : base(employeeService)
         {
         }

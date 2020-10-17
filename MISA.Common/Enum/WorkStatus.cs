@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Common.Enum
 {
+    /// <summary>
+    /// Hàm Enum của WorkStatus
+    /// Author: DVTHANG(13/10/2020)
+    /// </summary>
     public enum WorkStatus
     {
         Fresher = 0,

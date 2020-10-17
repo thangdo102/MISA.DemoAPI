@@ -421,6 +421,8 @@
     width: 100%;
     background-color: #ffffff;
     border: 1px solid #cbc9c8;
+    overflow-y: scroll;
+    display: block;
 }
 
 

@@ -6,15 +6,28 @@ using System.Text;
 
 namespace MISA.BusinessLayer.Service
 {
-   public class BaseService<T> : IBaseService<T>
+    
+    /// <summary>
+    /// Hàm dùng chung của lớp Service
+    /// Author: DVTHANG(15/10/2020)
+    /// </summary>
+    /// <typeparam name="T">Entity dùng chung</typeparam>
+    public class BaseService<T> : IBaseService<T>
     {
+
+        #region Declare
         IBaseRepository<T> _baseRepository;
-        
+        #endregion
+
+        #region constructor
         public BaseService(IBaseRepository<T> baseRepository)
         {
             _baseRepository = baseRepository;
-    }
+        }
 
+        #endregion
+
+        #region method
         public int Delete(Guid entityId)
         {
             return _baseRepository.Delete(entityId);
@@ -39,5 +52,8 @@ namespace MISA.BusinessLayer.Service
         {
             return _baseRepository.update(entity);
         }
+
+        #endregion
     }
+
 }

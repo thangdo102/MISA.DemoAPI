@@ -27,7 +27,7 @@ class BaseJS {
 
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
         $.ajax({
-            url: "/api/EmployeeApi",
+            url: "/api/employees",
             method: "GET",
             data: "",
             contentType: "application/json",
@@ -91,7 +91,7 @@ class BaseJS {
         debugger
 
         $.ajax({
-            url: "/api/DepartmentApi",
+            url: "/api/departments",
             method: "GET",
             data: "",
             contentType: "application/json",
@@ -115,7 +115,7 @@ class BaseJS {
     loadPosition() {
         debugger
         $.ajax({
-            url: "/api/PositionApi",
+            url: "/api/positions",
             method: "GET",
             data: "",
             contentType: "application/json",

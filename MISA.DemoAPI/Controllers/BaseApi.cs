@@ -9,17 +9,27 @@ using MISA.BusinessLayer.Interfaces;
 
 namespace MISA.DemoAPI.Controllers
 {
+    /// <summary>
+    /// API dùng chung
+    /// Author: DVTHANG(16/10/2020)
+    /// </summary>
+    /// <typeparam name="T">Đối tượng tương ứng </typeparam>
     [Route("api/[controller]")]
     [ApiController]
     public class BaseApi<T> : ControllerBase
     {
+        #region declare
         IBaseService<T> _baseService;
+        #endregion
 
+        #region constructor
         public BaseApi(IBaseService<T> baseService)
         {
             _baseService = baseService;
         }
+        #endregion
 
+        #region api
         /// <summary>
         /// Lấy danh sách entity
         /// AUTHOR: DVTHANG(17/10/2020)
@@ -33,7 +43,7 @@ namespace MISA.DemoAPI.Controllers
             if (result != null)
                 return Ok(result);
             return NoContent();
-        }
+        }  
 
         /// <summary>
         /// Lấy ra 1 entity theo Id
@@ -101,5 +111,7 @@ namespace MISA.DemoAPI.Controllers
             else
                 return BadRequest();
         }
+
+        #endregion
     }
 }

@@ -5,6 +5,10 @@ using System.Text;
 
 namespace MISA.DataAccessLayer.interfaces
 {
+    /// <summary>
+    /// Interface của Employee Repository
+    /// Author: DVTHANG(16/10/2020)
+    /// </summary>
     public interface IEmployeeRepository : IBaseRepository<Employee>
     {
         

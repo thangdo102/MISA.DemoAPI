@@ -8,14 +8,18 @@ using System.Text;
 namespace MISA.DataAccessLayer.DatabaseAccess
 {
     /// <summary>
-    /// Hàm dùng chung cho DBContext
+    /// Hàm chứa các câu lệnh sql dùng cho MySQL
+    /// Author: DVTHANG(15/10/2020)
     /// </summary>
     public class DatabaseContext<T> : IDisposable, IDatabaseContext<T>
     {
+        #region declare
         MySqlConnection _sqlConnection;
         MySqlCommand _sqlCommand;
         readonly string _connectionString = "User Id=nvmanh;Host=35.194.166.58;Password=12345678@Abc;Database=MISACukCuk_F09_DVTHANG;Character Set=utf8";
+        #endregion
 
+        #region constructor
         public DatabaseContext()
         {
             _sqlConnection = new MySqlConnection(_connectionString);  //tạo kết nối
@@ -24,7 +28,9 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlConnection.Open(); //mở cổng kết nối
         }
+        #endregion
 
+        #region method
         public IEnumerable<T> Get()
         {
             var entities = new List<T>();
@@ -210,6 +216,7 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             // Thực hiện đọc dữ liệu:
             return _sqlCommand.ExecuteScalar();
         }
+        #endregion
     }
 }
 

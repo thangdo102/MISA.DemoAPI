@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\dell\\.nuget\\packages\\": {}
+    "C:\\Users\\DVTHANG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
+      "projectUniqueName": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
       "projectName": "MISA.Common",
-      "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
-      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\obj\\",
+      "projectPath": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
+      "packagesPath": "C:\\Users\\DVTHANG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DVTHANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

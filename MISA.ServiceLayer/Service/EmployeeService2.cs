@@ -8,15 +8,25 @@ using System.Text;
 
 namespace MISA.BusinessLayer.Service
 {
+/// <summary>
+/// Lớp service của employee
+/// Author: DVTHANG(15/10/2020)
+/// </summary>
     public class EmployeeService2 : IEmployeeService
     {
-        IEmployeeRepository _employeeRepository;
 
+        #region declare
+        IEmployeeRepository _employeeRepository;
+        #endregion
+
+        #region constructor
         public EmployeeService2(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
+        #endregion
 
+        #region method
         public bool checkEmployeeByCode(string employeeCode)
         {
             throw new NotImplementedException();
@@ -57,5 +67,6 @@ namespace MISA.BusinessLayer.Service
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace MISA.DataAccessLayer
 {
+    /// <summary>
+    /// Hàm chứa các câu lệnh sql dùng cho SQLServer
+    /// Author: DVTHANG(15/10/2020)
+    /// </summary>
     public class DatabaseSQLServerAccess : IDatabaseContext<Employee>, IDisposable
     {
+        #region declare
         SqlConnection _sqlConnection;
         SqlCommand _sqlCommand;
         readonly string _connectionString = "User Id=nvmanh;Host=35.194.166.58;Password=12345678@Abc;Database=MISACukCuk_F09_DVTHANG;Character Set=utf8";
+        #endregion
 
+        #region constructor
         public DatabaseSQLServerAccess()
         {
             _sqlConnection = new SqlConnection(_connectionString);  //tạo kết nối
@@ -22,7 +29,9 @@ namespace MISA.DataAccessLayer
             _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlConnection.Open(); //mở cổng kết nối
         }
+        #endregion
 
+        #region method
         public int Delete(Guid employeeId)
         {
             _sqlCommand.CommandText = "PROC_DeleteEmployeeById";
@@ -167,5 +176,7 @@ namespace MISA.DataAccessLayer
         {
             throw new NotImplementedException();
         }
+        #endregion
+
     }
 }

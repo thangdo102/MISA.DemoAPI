@@ -7,6 +7,11 @@ using System.Text;
 
 namespace MISA.DataAccessLayer.Repository
 {
+
+    /// <summary>
+    /// Lớp Repository của Employee
+    /// Author: DVTHANG(16/10/2020)
+    /// </summary>
     public class EmployeeRepository : BaseRepository<Employee>, IEmployeeRepository
     {
         public EmployeeRepository(IDatabaseContext<Employee> databaseContext) : base(databaseContext)
