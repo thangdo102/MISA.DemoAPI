@@ -244,13 +244,13 @@
                             <tr>
                                 <th fieldName="employeeCode" format="validateString">Mã nhân viên</th>
                                 <th fieldName="employeeName" title="With channels in Slack, you and your team know where to go to ask questions, share updates and stay in the loop." format="validateString">Tên nhân viên....</th>
-                                <th fieldName="gender" format="validateString">Giới tính</th>
-                                <th fieldName="dateOfBirth" format="validateDate" formatDate="date" >Ngày sinh</th>
+                                <th fieldName="genderName" format="validateString">Giới tính</th>
+                                <th fieldName="dateOfBirth" format="validateDate" formatDate="date">Ngày sinh</th>
                                 <th fieldName="email" format="validateString">Email</th>
                                 <th fieldName="positionName" format="validateString">Vị trí</th>
                                 <th fieldName="departmentName" format="validateString">Phòng ban</th>
                                 <th fieldName="salary" format="validateNumber" formatSalary="validateSalary">Mức lương</th>
-                                <th fieldName="workStatus" format="validateString">Tình trạng công việc</th>
+                                <th fieldName="workStatusName" format="validateString">Tình trạng công việc</th>
                             </tr>
                         </thead>
 
@@ -369,19 +369,18 @@
                             <tr>
                                 <td style="width: 116px">Vị trí</td>
                                 <td>
-                                    <select class="inputSelected" id="positionName">
-                                        <option value="male">Phòng đào tạo</option>
-                                        <option value="female">Phòng tuyển sinh</option>
-                                        <option value="other">Phòng thiết kế</option>
+                                    <select class="inputSelected" id="positionName" name="departmentName">
+
+                                        <option value="s">Select</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Phòng ban</td>
                                 <td>
-                                    <select class="inputSelected" id="departmentName">
-                                        <option value="male">Giám Đốc</option>
-                                        <option value="female">Nhân viên</option>
+                                    <select class="inputSelected" id="departmentName" name="departmentName">
+                                        
+                                        <option value="s">Select</option>
                                     </select>
                                 </td>
                             </tr>

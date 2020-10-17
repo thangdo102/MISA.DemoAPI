@@ -10,6 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MISA.BusinessLayer.Interfaces;
+using MISA.BusinessLayer.Service;
+using MISA.DataAccessLayer;
+using MISA.DataAccessLayer.interfaces;
+using MISA.DataAccessLayer.Repository;
 
 namespace MISA.DemoAPI
 {
@@ -26,6 +31,7 @@ namespace MISA.DemoAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+           DIConfig.InjectionConfig(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,18 +10,14 @@ class BaseJS {
         this.FormMode = null;
         this.getData();
         this.loadData();
+        this.loadDepartment();
+        this.loadPosition();
         this.initEventEmp();
         this.onHiddenDialog();
         this.onHiddenDialogConfirm();
     }
 
-    /**
-     * Hàm tạo một mảng dữ liệu trống, khi lớp con extends lớp cha thì lớp con sẽ dùng để lưu dữ liệu của lớp con vào
-     * Author: DVTHANG(27/09/2020)
-     * */
-    getData() {
-        this.Data = [];
-    }
+
 
     /**
     * Hàm load dữ liệu từ mảng employees lên bảng
@@ -29,11 +25,8 @@ class BaseJS {
     * */
     loadData() {
 
-
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
-
         $.ajax({
-
             url: "/api/EmployeeApi",
             method: "GET",
             data: "",
@@ -41,7 +34,7 @@ class BaseJS {
             dataType: ""
 
         }).done(function (response) {
-
+            debugger
             var fields = $('table#tbListData thead th');  //lấy tất cả các th  
             $('#tbListData tbody').empty();
             $.each(response, function (index, obj) {   //duyệt từng phần tử của mảng các đối tượng 
@@ -49,16 +42,16 @@ class BaseJS {
 
                 $.each(fields, function (index, field) {    //duyệt từng phần tử th
                     var fieldName = $(field).attr(`fieldName`);   //lấy giá trị của thuộc tính fieldName rồi lưu vào biến fieldName
-
+                    var value = obj[fieldName];
                     //format cho các cột money
                     var formatSalary = $(field).attr(`formatSalary`);
-                    /*var formatDate = $(field).attr(`formatDate`);*/
+                    var formatDate = $(field).attr(`formatDate`);
                     if (formatSalary == 'validateSalary') {
                         var value = (obj[fieldName]).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-                    } /*else if (formatDate == 'date') {
-                        var value = commonJS.formatDate((obj[fieldName]));
-                    }*/
-
+                    } else if (formatDate == "date" && value) {
+                        value = new Date(value);
+                        var value = commonJS.formatDate(value);
+                    }
                     else {
                         var value = (obj[fieldName] || (" "));  // obj[fieldName] giống với customer.[CustomerCode], ||(" ") là nếu bị sai trường, sẽ hiển thị khoảng trắng thay vì hiển thị underfine
                     }
@@ -77,14 +70,63 @@ class BaseJS {
                     //hiển thị row-selected lên dialog
                     $(tr).data('data', obj); // lưu cả object vào attribute là data
                     $(tr).append(td); //append từng thằng td vào tr
-                    debugger
-                })
 
+                })
+                debugger
                 $('#tbListData tbody').append(tr);
             })
-            debugger
+
 
         }).fail(function response() {
+            debugger
+        })
+    }
+
+
+    /**
+     * Hàm load danh sách department trong dialog
+     * Author: DVTHANG(13/10/2020)
+     * */
+    loadDepartment() {
+        debugger
+
+        $.ajax({
+            url: "/api/DepartmentApi",
+            method: "GET",
+            data: "",
+            contentType: "application/json",
+            dataType: ""
+        }).done(function (response) {
+            $.each(response, function (i, department) {
+                console.log(department.departmentName);
+                $("#departmentName").append($('<option></option>').val(department.departmentId).text(department.departmentName));
+            })
+            debugger
+        }).fail(function (response) {
+            debugger
+        })
+    }
+
+
+    /**
+     * Hàm load danh sách Position trong dialog
+     * Author: DVTHANG(13/10/2020)
+     * */
+    loadPosition() {
+        debugger
+        $.ajax({
+            url: "/api/PositionApi",
+            method: "GET",
+            data: "",
+            contentType: "application/json",
+            dataType: ""
+        }).done(function (response) {
+            $.each(response, function (i, position) {
+                console.log(position.positionName);
+                $("#positionName").append($('<option></option>').val(position.positionId).text(position.positionName));
+            })
+            debugger
+        }).fail(function (response) {
             debugger
         })
     }
@@ -320,6 +362,7 @@ class BaseJS {
      * Update: DVTHANG(1/10/2020): viết hàm base
      * */
     saveInfor() {
+        debugger
         this.FormMode = "Add";   //Dùng chung 1 dialog, nên phải phân biệt add và edit
         //Các bước add employee vào table
         //1. validate dữ liệu(kiểm tra xem dữ liệu nhập trên form có đúng hay k)
@@ -338,17 +381,8 @@ class BaseJS {
             }
         })
 
-        //Nếu value của input email ko đúng với validate, thì sẽ ko cho thêm và in ra alert
-        if (validData.validateEmail(inputEmail.trim())) {
-            isValidEmail = true;
-        } else {
-            isValidEmail = false;
-            /*alert("Unformatted Email!");*/
-            $("input[emailCheck]").addClass('require-error');
-        }
-
         //nếu required input và email input hợp lệ thì sẽ tiến thành các bước tiếp theo
-        if (isValid && isValidEmail) {
+        if (isValid) {
             //2. Build object cần lưu:
             var inputs = $('input[fieldName]');
             var customer = {};
@@ -361,7 +395,6 @@ class BaseJS {
             //3. thêm dữ liệu vào đối tượng
             if (self.FormMode == 'Add') {
                 alert('add');
-
                 $.ajax({
                     url: "/customer",
                     method: "POST",
@@ -376,8 +409,9 @@ class BaseJS {
                     //4. Xử lý sau khi lưu dữ liệu
                     self.onHiddenDialog();
                     $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
+                    debugger
                 }).fail(function (response) {
-
+                    debugger
                 })
             } else {
                 alert('edit');

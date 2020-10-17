@@ -1,0 +1,14 @@
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csprojAssemblyReference.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.AssemblyInfoInputs.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.AssemblyInfo.cs
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.deps.json
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.Common.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csproj.CopyComplete
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb

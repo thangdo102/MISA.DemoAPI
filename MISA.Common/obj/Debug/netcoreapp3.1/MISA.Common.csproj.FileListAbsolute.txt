@@ -1,0 +1,11 @@
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csprojAssemblyReference.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.Properties.Resources.resources
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.GenerateResource.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfoInputs.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfo.cs
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.CoreCompileInputs.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.deps.json
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.pdb

@@ -4,14 +4,14 @@
     "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj": {}
   },
   "projects": {
-    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj": {
+    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj",
-        "projectName": "MISA.DemoAPI",
-        "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj",
+        "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
+        "projectName": "MISA.Common",
+        "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
         "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\obj\\",
+        "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,10 +37,139 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj",
+        "projectName": "MISA.DataAccessLayer",
+        "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
+                "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
           "dependencies": {
             "MySqlConnector": {
               "target": "Package",
               "version": "[1.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj",
+        "projectName": "MISA.DemoAPI",
+        "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\MISA.DemoAPI.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DemoAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
+                "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
+              },
+              "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj": {
+                "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
             }
           },
           "imports": [
@@ -57,6 +186,65 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj",
+        "projectName": "MISA.BusinessLayer",
+        "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
+                "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
+              },
+              "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj": {
+                "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

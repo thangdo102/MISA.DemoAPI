@@ -17,8 +17,6 @@ D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.dl
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.pdb
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.genruntimeconfig.cache
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MySqlConnector.dll
-D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CoreCompileInputs.cache
-D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CopyComplete
 C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\appsettings.json
@@ -42,3 +40,19 @@ C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcor
 C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.dll
 C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.pdb
 C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.genruntimeconfig.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.Properties.Resources.resources
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.GenerateResource.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.CoreCompileInputs.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.Common.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb
+D:\Hoctap\MISA\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb
