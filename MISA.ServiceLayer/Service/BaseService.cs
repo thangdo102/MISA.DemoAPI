@@ -1,4 +1,5 @@
 ﻿using MISA.BusinessLayer.Interfaces;
+using MISA.Common.Models;
 using MISA.DataAccessLayer.interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace MISA.BusinessLayer.Service
 
         #region Declare
         IBaseRepository<T> _baseRepository;
+        protected List<string> ValidateErrorResponseMsg = new List<string>(); 
         #endregion
 
         #region constructor
@@ -43,16 +45,35 @@ namespace MISA.BusinessLayer.Service
             return _baseRepository.GetById(entityId);
         }
 
-        public int Insert(T entity)
+        //khai báo virtual là chỉ đây là phương thức ảo
+        protected virtual bool ValidateData(T entity)
         {
-            return _baseRepository.Insert(entity);
+            return true;
+        }
+
+        public ServiceResponse Insert(T entity)
+        {
+            var serviceResponse = new ServiceResponse();
+            //check trùng mã
+            if (ValidateData(entity) == true)
+            {
+                serviceResponse.Success = true;
+                serviceResponse.Msg.Add("Thành công");
+                serviceResponse.data = _baseRepository.Insert(entity);
+            }
+            else
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Msg = ValidateErrorResponseMsg;
+            }
+            return serviceResponse;
+            
         }
 
         public int update(T entity)
         {
             return _baseRepository.update(entity);
         }
-
         #endregion
     }
 

@@ -20,11 +20,26 @@ namespace MISA.DataAccessLayer.Repository
 
         public bool checkEmployeeByCode(string employeeCode)
         {
-            var objectValue = _databaseContext.Get("PROC_GetEmployeeByCode2", employeeCode);
+            var objectValue = _databaseContext.Get("PROC_CheckEmployeeCode", employeeCode);
             if (objectValue == null)
                 return false;
-            else
-                return true;
+            return true;
+        }
+
+        public bool checkEmployeeByIdentityNumber(string identityNumber)
+        {
+            var objectValue = _databaseContext.GetByIdentityCode("PROC_CheckEmployeeIdentityNumber", identityNumber);
+            if (objectValue == null)
+                return false;
+            return true;
+        }
+
+        public bool checkEmployeeByPhoneNumber(string phoneNumber)
+        {
+            var objectValue = _databaseContext.GetByPhoneNumber("PROC_CheckEmployeePhoneNumber", phoneNumber);
+            if (objectValue == null)
+                return false;
+            return true;
         }
     }
 }

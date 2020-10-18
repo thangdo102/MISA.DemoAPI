@@ -43,7 +43,7 @@ namespace MISA.DemoAPI.Controllers
             if (result != null)
                 return Ok(result);
             return NoContent();
-        }  
+        }
 
         /// <summary>
         /// Lấy ra 1 entity theo Id
@@ -72,10 +72,13 @@ namespace MISA.DemoAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] T entity)
         {
-            var affectRow = _baseService.Insert(entity);
-            if (affectRow > 0)
-                return CreatedAtAction("POST", affectRow);
-            return BadRequest();
+            var serviceResponse = _baseService.Insert(entity);
+            //Nếu data(data ở đây là 1 kiểu object) khác null thì sẽ ép kiểu nó về int, còn nếu null thì là = 0
+            var effectRow = serviceResponse.data != null ? (int)serviceResponse.data : 0;
+
+            if (effectRow > 0)
+                return CreatedAtAction("POST", effectRow);
+            return BadRequest(serviceResponse);
         }
 
 

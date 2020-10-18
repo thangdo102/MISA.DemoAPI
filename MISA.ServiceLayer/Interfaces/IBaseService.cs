@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MISA.Common.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,7 +28,7 @@ namespace MISA.BusinessLayer.Interfaces
         /// </summary>
         /// <param name="entity">đối tượng cần thêm mới</param>
         /// <returns></returns>
-        int Insert(T entity);
+        ServiceResponse Insert(T entity);
 
         /// <summary>
         /// Update thông tin 1 đối tượng

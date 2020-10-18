@@ -510,19 +510,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DVTHANG\\.nuget\\packages\\": {}
+    "C:\\Users\\dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj",
+      "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj",
       "projectName": "MISA.DataAccessLayer",
-      "projectPath": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj",
-      "packagesPath": "C:\\Users\\DVTHANG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.DataAccessLayer\\obj\\",
+      "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj",
+      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+      "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DVTHANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -535,8 +535,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
-              "projectPath": "C:\\Users\\DVTHANG\\Desktop\\New folder\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
+            "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
+              "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
             }
           }
         }
@@ -574,7 +574,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

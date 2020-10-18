@@ -3,6 +3,7 @@ using MISA.DataAccessLayer.interfaces;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace MISA.DataAccessLayer.DatabaseAccess
@@ -40,7 +41,7 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             MySqlDataReader mySqlDataReader = _sqlCommand.ExecuteReader();   //là đối tượng để xử lí việc đọc dữ liệu, reader là đọc lần lượt từng dòng một, hết dòng 1 sẽ xuống dòng 2
             while (mySqlDataReader.Read())  //vòng lặp đọc từng hàng dữ liệu một lần
             {
-                //Mỗi 1 vòng này sẽ tạo ra 1 employee
+
                 var entity = Activator.CreateInstance<T>();
 
                 for (int i = 0; i < mySqlDataReader.FieldCount; i++)  //vòng lặp đọc từng ô trong hàng  
@@ -102,40 +103,31 @@ namespace MISA.DataAccessLayer.DatabaseAccess
 
 
         /// <summary>
-        ///  Hàm thêm mới nhân viên
+        ///  Hàm thêm mới dùng chung cho các entity
         /// Author: DVTHANG(14/10/2020)
         /// </summary>
-        /// <param name="employee"></param>
+        /// <param name="entity">đại diện cho các entity</param>
         /// <returns></returns>
         public int Insert(T entity)
         {
-            var employee = entity as Employee;
-            //dùng để sử dụng Procedures
-            _sqlCommand.CommandText = "PROC_InsertEmployee";
-
+            var entityName = typeof(T).Name;
             _sqlCommand.Parameters.Clear();
-            //Gán giá trị đầu vào cho các tham số trong procedures:
-            _sqlCommand.Parameters.AddWithValue("@EmployeeId", Guid.NewGuid());
-            _sqlCommand.Parameters.AddWithValue("@EmployeeCode", employee.EmployeeCode);
-            _sqlCommand.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
-            _sqlCommand.Parameters.AddWithValue("@Gender", employee.Gender);
-            _sqlCommand.Parameters.AddWithValue("@Email", employee.Email);
-            _sqlCommand.Parameters.AddWithValue("@DateOfBirth", employee.DateOfBirth);
-            _sqlCommand.Parameters.AddWithValue("@PhoneNumber", employee.PhoneNumber);
-            _sqlCommand.Parameters.AddWithValue("@IdentityNumber", employee.IdentityNumber);
-            _sqlCommand.Parameters.AddWithValue("@IdentityDate", employee.IdentityDate);
-            _sqlCommand.Parameters.AddWithValue("@IdentityPlace", employee.IdentityPlace);
-            _sqlCommand.Parameters.AddWithValue("@PositionId", employee.PositionId);
-            _sqlCommand.Parameters.AddWithValue("@DepartmentId", employee.DepartmentId);
-            _sqlCommand.Parameters.AddWithValue("@TaxCode", employee.TaxCode);
-            _sqlCommand.Parameters.AddWithValue("@Salary", employee.Salary);
-            _sqlCommand.Parameters.AddWithValue("@JoinDate", employee.JoinDate);
-            _sqlCommand.Parameters.AddWithValue("@WorkStatus", employee.WorkStatus);
+            _sqlCommand.CommandText = $"PROC_Insert{entityName}";
+            MySqlCommandBuilder.DeriveParameters(_sqlCommand);  //Lấy thông tin tham số từ procedure rồi thêm vào sqlCommand
+            var parameters = _sqlCommand.Parameters;  //Lấy danh sách các param
+            //var properties = typeof(T).GetProperties();
 
-            var affectRows = _sqlCommand.ExecuteNonQuery();   //Trả về số dòng bị ảnh hưởng như thêm, sửa xóa được bao nhiêu dòng
-
+            foreach (MySqlParameter param in parameters)  //vòng lặp từng thằng param 
+            {
+                var paramName = param.ParameterName.Replace("@", string.Empty);  //Lấy ra paramName, bỏ chữ @ đi để lấy key
+                var property = entity.GetType().GetProperty(paramName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);  //các param truyền vào trong procedure có thể viết hoa hoặc viết thường. Ví dụ: @departmentname
+                if (property != null)
+                    param.Value = property.GetValue(entity);  //lấy ra giá trị rồi gán cho param
+            }
+            var affectRows = _sqlCommand.ExecuteNonQuery();
             return affectRows;
         }
+
 
         /// <summary>
         /// Sửa 1 nhân viên theo Id
@@ -179,12 +171,17 @@ namespace MISA.DataAccessLayer.DatabaseAccess
         /// </summary>
         /// <param name="employeeId"> id của nhân viên</param>
         // DELETE api/<EmployeeApi>/5
-        public int Delete(Guid employeeId)
+        public int Delete(Guid entityId)
         {
-            _sqlCommand.CommandText = "PROC_DeleteEmployeeById";
-            //Gán giá trị đầu vào cho các tham số trong procedures:
-            _sqlCommand.Parameters.AddWithValue("@EmployeeId", employeeId);
-            var affectRows = _sqlCommand.ExecuteNonQuery();   //Trả về số dòng bị ảnh hưởng như thêm, sửa xóa được bao nhiêu dòng
+            var entityName = typeof(T).Name;
+            _sqlCommand.Parameters.Clear();
+            _sqlCommand.CommandText = $"PROC_Delete{entityName}ById";
+            MySqlCommandBuilder.DeriveParameters(_sqlCommand);
+            if (_sqlCommand.Parameters.Count > 0)
+            {
+                _sqlCommand.Parameters[0].Value = entityId;  //chỉ truyền id vào cho thằng param đầu tiên
+            }
+            var affectRows = _sqlCommand.ExecuteNonQuery();
             return affectRows;
         }
 
@@ -197,17 +194,18 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             _sqlConnection.Close();
         }
 
-        public bool checkEmployeeByCode(string employeeCode)
-        {
-            //Khai báo câu lệnh truy vấn
-            _sqlCommand.CommandText = "PROC_GetEmployeeByCode";
-            _sqlCommand.Parameters.AddWithValue("@EmployeeCode", employeeCode);
-            var mySQLDataValue = _sqlCommand.ExecuteScalar();
-            if (mySQLDataValue == null)
-                return false;
-            return true;
-        }
+        /* public bool checkEmployeeByCode(string employeeCode)
+         {
+             //Khai báo câu lệnh truy vấn
+             _sqlCommand.CommandText = "PROC_GetEmployeeByCode";
+             _sqlCommand.Parameters.AddWithValue("@EmployeeCode", employeeCode);
+             var mySQLDataValue = _sqlCommand.ExecuteScalar();
+             if (mySQLDataValue == null)
+                 return false;
+             return true;
+         }*/
 
+        //check ko được trùng EmployeeCode
         public object Get(string storeName, string code)
         {
             _sqlCommand.Parameters.Clear();
@@ -216,6 +214,29 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             // Thực hiện đọc dữ liệu:
             return _sqlCommand.ExecuteScalar();
         }
+
+        public object GetByIdentityCode(string storeName, string identityNumber)
+        {
+            _sqlCommand.Parameters.Clear();
+            _sqlCommand.CommandText = storeName;
+            _sqlCommand.Parameters.AddWithValue("@IdentityNumber", identityNumber);
+            // Thực hiện đọc dữ liệu:
+            return _sqlCommand.ExecuteScalar();
+        }
+
+        public object GetByPhoneNumber(string storeName, string phoneNumber)
+        {
+            _sqlCommand.Parameters.Clear();
+            _sqlCommand.CommandText = storeName;
+            _sqlCommand.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+            // Thực hiện đọc dữ liệu:
+            return _sqlCommand.ExecuteScalar();
+        }
+
+ 
+
+
+
         #endregion
     }
 }

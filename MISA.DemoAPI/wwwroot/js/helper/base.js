@@ -5,6 +5,7 @@
  * */
 class BaseJS {
 
+
     constructor() {
         //Gán mặc định FormMode:
         this.FormMode = null;
@@ -16,7 +17,6 @@ class BaseJS {
         this.onHiddenDialog();
         this.onHiddenDialogConfirm();
     }
-
 
 
     /**

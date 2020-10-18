@@ -176,6 +176,16 @@ namespace MISA.DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public object GetByIdentityCode(string storeName, string identityNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetByPhoneNumber(string storeName, string phoneNumber)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
     }
