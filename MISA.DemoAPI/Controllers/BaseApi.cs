@@ -105,7 +105,7 @@ namespace MISA.DemoAPI.Controllers
         /// </summary>
         /// <param name="entityId"> id của entity</param>
         // DELETE api/<BaseApi>/5
-        [HttpDelete("{employeeId}")]
+        [HttpDelete("{entityId}")]
         public IActionResult Delete(Guid entityId)
         {
             var effectRow = _baseService.Delete(entityId);
@@ -114,7 +114,6 @@ namespace MISA.DemoAPI.Controllers
             else
                 return BadRequest();
         }
-
         #endregion
     }
 }

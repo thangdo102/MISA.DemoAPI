@@ -22,3 +22,15 @@ C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.csproj.CopyComplete
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.deps.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\bin\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.AssemblyInfo.cs
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.csproj.CopyComplete
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DataAccessLayer\obj\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb

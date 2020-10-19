@@ -92,3 +92,17 @@ C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcorea
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.dll
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.pdb
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.genruntimeconfig.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.Properties.Resources.resources
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.DemoAPI\obj\Debug\netcoreapp3.1\MISA.DemoAPI.csproj.GenerateResource.cache

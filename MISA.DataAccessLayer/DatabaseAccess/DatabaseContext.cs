@@ -179,7 +179,7 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             MySqlCommandBuilder.DeriveParameters(_sqlCommand);
             if (_sqlCommand.Parameters.Count > 0)
             {
-                _sqlCommand.Parameters[0].Value = entityId;  //chỉ truyền id vào cho thằng param đầu tiên
+                _sqlCommand.Parameters[0].Value = entityId;  //truyền param đầu tiên là EmployeeId cho entityId
             }
             var affectRows = _sqlCommand.ExecuteNonQuery();
             return affectRows;
@@ -232,10 +232,6 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             // Thực hiện đọc dữ liệu:
             return _sqlCommand.ExecuteScalar();
         }
-
- 
-
-
 
         #endregion
     }

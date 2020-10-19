@@ -20,3 +20,14 @@ C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreap
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfo.cs
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.dll
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.deps.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csprojAssemblyReference.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.Properties.Resources.resources
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.GenerateResource.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfoInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.AssemblyInfo.cs
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.csproj.CoreCompileInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.Common\obj\Debug\netcoreapp3.1\MISA.Common.pdb

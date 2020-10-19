@@ -529,19 +529,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dell\\.nuget\\packages\\": {}
+    "C:\\Users\\dvthang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj",
       "projectName": "MISA.BusinessLayer",
-      "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.ServiceLayer\\obj\\",
+      "projectPath": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.ServiceLayer\\MISA.BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\dvthang\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.ServiceLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -554,11 +554,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
-              "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
+            "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
+              "projectPath": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj"
             },
-            "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj": {
-              "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj"
+            "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.DataAccessLayer\\MISA.DataAccessLayer.csproj"
             }
           }
         }
@@ -586,7 +586,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -27,7 +27,7 @@ namespace MISA.BusinessLayer.Service
 
         #region method
         /// <summary>
-        /// Method của riêng đối tượng Employee
+        /// Các Method của riêng đối tượng Employee
         /// Author: DVTHANG(16/10/2020)
         /// </summary>
         /// <param name="employeeCode">Code truyền vào để check của employee</param>
@@ -46,7 +46,6 @@ namespace MISA.BusinessLayer.Service
         {
             return _employeeRepository.checkEmployeeByPhoneNumber(phoneNumber);
         }
-        #endregion
 
         protected override bool ValidateData(Employee entity)
         {
@@ -78,5 +77,6 @@ namespace MISA.BusinessLayer.Service
 
             return isValid;  //return false là ko trùng, true là trùng
         }
+        #endregion
     }
 }

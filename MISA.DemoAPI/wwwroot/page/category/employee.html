@@ -239,7 +239,7 @@
                 </div>
 
                 <div class="content-table-main">
-                    <table id="tbListData" class="content-table1" border="1" cellpadding="0" keyId="EmployeeId">
+                    <table id="tbListData" class="content-table1" border="1" cellpadding="0" keyId="employeeId">
                         <thead>
                             <tr>
                                 <th fieldName="employeeCode" format="validateString">Mã nhân viên</th>
@@ -318,18 +318,18 @@
                                 <table>
                                     <tr>
                                         <td>Mã nhân viên <span style="color:red">(*)</span></td>
-                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input fieldName="employeeCode" id="txtEmployeeCode" required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>Tên nhân viên <span style="color:red">(*)</span></td>
-                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input fieldName="employeeName" required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>Ngày sinh</td>
-                                        <td><input style="width: 166px" type="date" /></td>
+                                        <td><input fieldName="dateOfBirth" style="width: 89%" type="date" /></td>
                                         <td>Giới tính</td>
                                         <td>
-                                            <select style="width: 95.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
+                                            <select fieldName="dateOfBirth" style="width: 95.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
                                                 <option value="male">Nam</option>
                                                 <option value="female">Nữ</option>
                                                 <option value="other">Khác</option>
@@ -338,18 +338,17 @@
                                     </tr>
                                     <tr>
                                         <td>Email <span style="color:red">(*)</span></td>
-                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input fieldName="email" required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>ĐT di động <span style="color:red">(*)</span></td>
-                                        <td><input required class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input fieldName="phoneNumber" required class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>Số CMT</td>
-                                        <td><input style="width: 168px;" type="text" /></td>
+                                        <td><input style="width: 89%;" type="text" /></td>
                                         <td>Ngày cấp</td>
                                         <td><input style="width: 89.7%" type="date" /></td>
-
                                     </tr>
                                     <tr>
                                         <td>Nơi cấp CMT</td>
@@ -359,7 +358,7 @@
                             </div>
                             <div class="infoInput-imgCommon">
                                 <div class="infoInput-img">Image</div>
-                                <div class="infoInput-textImage">Vui lòng up ảnh với định dạng png và jpg</div>
+                                <div class="infoInput-textImage">Chỉ được upload tệp<span id="spanImage">.jpg .jpeg .png .gif</span></div>
                             </div>
 
                         </div>
@@ -380,15 +379,15 @@
                                 <td>Phòng ban</td>
                                 <td>
                                     <select class="inputSelected" id="departmentName" name="departmentName">
-                                        
+
                                         <option value="s">Select</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Mã số thuế cá nhân</td>
-                                <td><input type="text" class="infoInput-text2" /></td>
-                                <td>Mức lương</td>
+                                <td style="width:29%"><input type="text" class="infoInput-text2" /></td>
+                                <td style="width: 67px">Mức lương</td>
                                 <td><input style="width: 97.6%" type="text" class="infoInput-text2" /></td>
                             </tr>
                             <tr>
@@ -396,7 +395,7 @@
                                 <td><input class="infoInput-text2" type="date" /></td>
                                 <td>Tình trạng</td>
                                 <td>
-                                    <select style="width: 102%" class="workStatus" id="workStatus">
+                                    <select style="width: 100.7%" class="workStatus" id="workStatus">
                                         <option value="male">Đang làm việc</option>
                                         <option value="female">Nghỉ việc</option>
                                         <option value="other">Khác</option>
@@ -408,45 +407,103 @@
 
                     </div>
 
-                    <div class="dialog-footer">
-                        <button style="margin-right: 10px" id="btnAddNew">
 
+                    <!--<div class="table-footer">
+                        <button class="footer-help">
+                            <div class="footer-help-icon"></div>
+                            <div class="footer-help-text">Giúp</div>
+                        </button>
+                        <div class="footer-space-text"></div>
+
+
+
+                        <button class="footer-cut" id="btnAddNew">
+
+                            <div class="footer-cut-icon"></div>
+                            <div class="footer-cut-text">Cất</div>
+                        </button>
+                        <button class="footer-add">
                             <div class="footer-add-icon"></div>
-                            Cất
+                            <div class="footer-add-text">Cất & Thêm</div>
+                        </button>
+                        <button class="footer-cancel" id="buttonCancel">
+                            <div class="footer-cancel-icon"></div>
+                            <div class="footer-cancel-text">Hủy bỏ</div>
+                        </button>
+                    </div>-->
+
+                    <div class="dialog-footer">
+                        <button class="footer-help">
+                            <div class="footer-help-icon"></div>
+                            <div class="footer-help-text">Giúp</div>
+                        </button>
+                        <div class="footer-space-text"></div>
+                        <button class="footer-cut" id="btnAddNew">
+
+                            <div class="footer-cut-icon"></div>
+                            <div class="footer-cut-text">Cất</div>
                         </button>
 
-                        <button id="buttonCancel">
+                        <button class="footer-add">
+                            <div class="footer-add-icon"></div>
+                            <div class="footer-add-text">Cất & Thêm</div>
+                        </button>
+                        <button class="footer-cancel" id="buttonCancel">
                             <div class="footer-cancel-icon"></div>
-                            Hủy bỏ
+                            <div class="footer-cancel-text">Hủy bỏ</div>
                         </button>
                     </div>
-
-
                 </div>
-
-
-
-
             </div>
-
         </div>
     </div>
 
     <!--Dialog xác nhận Yes/No-->
-    <div class="dialogConfirm" id="dialogConfirm" title="Xác nhận">
+    <div class="dialogConfirm" id="dialogConfirm" title="CUKCUK - Quản lý nhà hàng">
         <div class="model"></div>
         <div class="yesNo-background">
-            <div class="yesNo-header">Xác nhận</div>
+            <div class="yesNo-header">CUKCUK - Quản lý nhà hàng</div>
 
             <div class="yesNo-Content">
+                <div id="yesNoImage"></div>
                 <a id="yesNo-question">Bạn có chắc muốn xóa Nhân viên này không?</a>
             </div>
+
             <div class="yesNo-footer">
-                <button class="yesNo-button" id="buttonNo">  Không</button>
-                <button class="yesNo-button" id="buttonYes">   Có</button>
+                <button class="yesNo-button" id="buttonNo">Không</button>
+                <button class="yesNo-button" id="buttonYes">Có</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Dialog nhắc nhở chưa chọn row để xóa-->
+    <div id="dialogNoti" title="CUKCUK - Quản lý nhà hàng">
+        <div class="model"></div>
+        <div class="yesNo-backgroundNoti">
+            <div class="yesNo-headerNoti">CUKCUK - Quản lý nhà hàng</div>
+            <div class="yesNo-ContentNoti">
+                <a id="yesNo-questionNoti"><span id="mySpan"></span></a>
+            </div>
+            <div class="yesNo-footerNoti">
+                <button class="yesNo-buttonNoti" id="buttonCloseNoti">Đóng</button>
             </div>
         </div>
     </div>
+
+    <!--Dialog nhắc nhở chưa chọn row để sửa-->
+<!--    <div id="dialogNotiEdit" title="CUKCUK - Quản lý nhà hàng">
+        <div class="model"></div>
+        <div class="yesNo-backgroundNoti">
+            <div class="yesNo-headerNoti">CUKCUK - Quản lý nhà hàng</div>
+            <div class="yesNo-ContentNoti">
+                <a id="yesNo-questionNoti"><span id="mySpan"></span></a>
+            </div>
+            <div class="yesNo-footerNoti">
+                <button class="yesNo-buttonNoti" id="buttonCloseNotiEdit">Đóng</button>
+            </div>
+        </div>
+    </div>-->
 
 
     <script src="/js/jquery-3.5.1.min.js"></script>

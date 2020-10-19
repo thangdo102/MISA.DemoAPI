@@ -125,7 +125,7 @@
 }
 
 .infoInput-text2 {
-    width: 93%;
+    width: 91%;
 }
 
 .workStatus {
@@ -144,20 +144,18 @@
 
 
 /*HELP button*/
-.employee-table .footer-help {
+.employee-tableInfor .footer-help {
     display: flex;
-    height: 81%;
     width: 10%;
     border: 1px solid #d1d1d0;
-    margin-left: 1%;
     outline-color: #006dbc;
 }
 
-.employee-table .footer-help-icon {
+.employee-tableInfor .footer-help-icon {
     background: url('/content/img/IconSprite.png') no-repeat 0 -1793px;
     width: 15px;
     height: 14px;
-    margin-top: 6px;
+    margin-top: 1px;
     margin-left: 5px;
 }
 
@@ -165,99 +163,96 @@
     width: 208%;
 }
 
-.employee-inputInforIdenityPlace{
+.employee-inputInforIdenityPlace {
     width: 282%;
 }
 
-.employee-table .footer-help-text {
+.employee-tableInfor .footer-help-text {
     height: 70%;
     width: 80%;
     text-align: center;
-    margin-top: 7px;
+    margin-top: 1px;
 }
 
 
 /*CUT Button*/
-.employee-table .footer-cut {
+.employee-tableInfor .footer-cut {
     display: flex;
-    height: 81%;
     width: 10%;
     border: 1px solid #d1d1d0;
     margin-left: 4.8%;
     outline-color: #006dbc;
 }
 
-.employee-table .footer-cut-icon {
+.employee-tableInfor .footer-cut-icon {
     background: url(/content/img/IconSprite.png) no-repeat 0 -2032px;
     width: 27px;
     height: 14px;
-    margin-top: 6px;
+    margin-top: 1px;
     margin-left: 8px;
 }
 
-.employee-table .footer-cut-text {
+.employee-tableInfor .footer-cut-text {
     height: 70%;
     width: 80%;
     text-align: center;
-    margin-top: 7px;
+    margin-top: 1px;
 }
 
 
 /*ADD Button*/
 
-.employee-table .footer-add {
+.employee-tableInfor .footer-add {
     display: flex;
-    height: 81%;
     width: 18%;
     border: 1px solid #d1d1d0;
     margin-left: 2%;
     outline-color: #006dbc;
 }
 
-.employee-table .footer-add-icon {
+.employee-tableInfor .footer-add-icon {
     background: url('/content/img/IconSprite.png') no-repeat 0 -1872px;
     width: 15px;
     height: 15px;
-    margin-top: 6px;
+    margin-top: 1px;
     margin-left: 8px;
 }
 
-.employee-table .footer-add-text {
+.employee-tableInfor .footer-add-text {
     height: 70%;
     width: 70%;
     text-align: end;
-    margin-top: 7px;
+    margin-top: 1px;
 }
 
 
 /*CANCEL Button*/
-.employee-table .footer-cancel {
+.employee-tableInfor .footer-cancel {
     display: flex;
-    height: 81%;
     width: 13%;
     border: 1px solid #d1d1d0;
     margin-left: 2%;
     outline-color: #006dbc;
 }
 
-.employee-table .footer-cancel-icon {
+.employee-tableInfor .footer-cancel-icon {
     background: url(/content/img/IconSprite.png) no-repeat 0 -1952px;
     width: 17px;
     height: 15px;
-    margin-top: 6px;
+    margin-top: 1px;
     margin-left: 5px;
 }
 
-.employee-table .footer-cancel-text {
+.employee-tableInfor .footer-cancel-text {
     height: 70%;
     width: 67%;
     text-align: inherit;
-    margin-top: 7px;
+    margin-top: 1px;
 }
 
-.employee-table .footer-space-text {
+.employee-tableInfor .footer-space-text {
     height: 70%;
-    width: 38.3%;
+    width: 39.8%;
 }
 /*footer*/
 .table-footer-content {
@@ -294,10 +289,9 @@ label {
 
 .employee-tableInfor .dialog-footer {
     height: 40px;
-    border-top: 1px solid #cacac7;
-    width: 100%;
+    width: 100.3%;
     display: flex;
-    justify-content: flex-end;
+    margin-top: -1px;
 }
 
 .employee-tableInfor .table-contentInfor {
@@ -318,14 +312,19 @@ label {
 .infoInput-imgCommon {
     width: 20%;
     height: 170px;
-    background-color: blue;
     display: block;
 }
 
 .infoInput-textImage {
     width: 100%;
     height: 15%;
-    background-color: aliceblue;
+    font-size: 11px;
+    text-align: center;
+}
+
+#spanImage {
+    font-size: 11px;
+    font-weight: 900;
 }
 
 .infoInput-img {
@@ -341,20 +340,21 @@ label {
     align-self: center;
 }
 
-
 .textFontWeight {
     font-weight: 900;
     border-bottom: 1px solid #cacac7;
     height: 15px;
     line-height: 50%;
+    margin-top: 3px;
 }
 
 .inputSelected {
     height: 25px;
-    width: 238%;
+    width: 291%;
     outline: none;
     border-color: #cacac7;
 }
+
 
 /*
     Css này dùng để: khi người dùng k nhập các trường dữ liệu bắt buộc 
@@ -370,30 +370,32 @@ label {
 
 .yesNo-background {
     position: absolute;
-    width: 300px;
+    width: 320px;
     top: calc(50% - 100px);
     left: calc(50% - 200px);
-    height: 100px;
+    height: 126px;
     background-color: #0068b2;
     display: block;
 }
 
 .yesNo-header {
     width: 95%;
-    height: 8%;
+    height: 13%;
     background-color: #0068b2;
     margin: auto;
     color: #ffffff;
     margin-top: 4px;
     margin-left: 5px;
+    line-height: 25px;
 }
 
 .yesNo-Content {
-    width: 98%;
+    width: 96%;
     height: 48%;
     background-color: #ffffff;
     margin: auto;
     margin-top: 9px;
+    display: flex;
 }
 
     .yesNo-Content p {
@@ -409,8 +411,8 @@ label {
 }
 
 .yesNo-footer {
-    width: 98%;
-    height: 28%;
+    width: 96%;
+    height: 24%;
     background-color: #ffffff;
     margin: auto;
     border: none;
@@ -418,5 +420,69 @@ label {
 
 #yesNo-question {
     line-height: 50px;
+}
+
+.dialogConfirm #yesNoImage {
+    background: url("../../content/img/helpnew.png") no-repeat;
+    width: 30px;
+    height: 40px;
+    background-position-y: 13px;
     margin-left: 10px;
+}
+
+
+/*CSS của dialog Noti*/
+
+.yesNo-backgroundNoti {
+    position: absolute;
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+    height: 92px;
+    background-color: #0068b2;
+    display: block;
+}
+
+.yesNo-headerNoti {
+    width: 95%;
+    height: 13%;
+    background-color: #0068b2;
+    margin: auto;
+    color: #ffffff;
+    margin-top: 4px;
+    margin-left: 5px;
+    line-height: 19px;
+}
+
+.yesNo-ContentNoti {
+    width: 96%;
+    height: 37%;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 9px;
+}
+
+    .yesNo-Content p {
+        color: black;
+    }
+
+.yesNo-buttonNoti {
+    width: 61px;
+    height: 24px;
+    justify-content: flex-end;
+    float: right;
+    margin-right: 10px;
+}
+
+.yesNo-footerNoti {
+    width: 96%;
+    height: 29%;
+    background-color: #ffffff;
+    margin: auto;
+    border: none;
+}
+
+#yesNo-questionNoti {
+    line-height: 33px;
+    margin-left: 8px;
 }

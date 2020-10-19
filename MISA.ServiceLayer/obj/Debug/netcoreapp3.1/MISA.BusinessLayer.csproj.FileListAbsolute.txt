@@ -26,3 +26,17 @@ C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\net
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csproj.CopyComplete
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
 C:\Users\DVTHANG\Desktop\New folder\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.deps.json
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.Common.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.Common.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\bin\Debug\netcoreapp3.1\MISA.DataAccessLayer.pdb
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.AssemblyInfo.cs
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.csproj.CopyComplete
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.dll
+C:\Users\dvthang\Desktop\MISA Project\MISA.DemoAPI\MISA.ServiceLayer\obj\Debug\netcoreapp3.1\MISA.BusinessLayer.pdb

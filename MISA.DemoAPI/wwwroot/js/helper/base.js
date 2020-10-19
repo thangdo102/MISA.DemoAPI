@@ -16,15 +16,16 @@ class BaseJS {
         this.initEventEmp();
         this.onHiddenDialog();
         this.onHiddenDialogConfirm();
+        this.onHiddenDialogNoti();
+        /*        this.onHiddenDialogNotiEdit();*/
     }
-
 
     /**
     * Hàm load dữ liệu từ mảng employees lên bảng
     *  Author: DVTHANG(23/09/2020)
     * */
     loadData() {
-
+        debugger
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
         $.ajax({
             url: "/api/employees",
@@ -39,10 +40,11 @@ class BaseJS {
             $('#tbListData tbody').empty();
             $.each(response, function (index, obj) {   //duyệt từng phần tử của mảng các đối tượng 
                 var tr = $(`<tr></tr>`);   //tạo ra <tr>
-
+                debugger
                 $.each(fields, function (index, field) {    //duyệt từng phần tử th
                     var fieldName = $(field).attr(`fieldName`);   //lấy giá trị của thuộc tính fieldName rồi lưu vào biến fieldName
                     var value = obj[fieldName];
+                    var keyId = $("#tbListData").attr('keyId');
                     //format cho các cột money
                     var formatSalary = $(field).attr(`formatSalary`);
                     var formatDate = $(field).attr(`formatDate`);
@@ -67,19 +69,34 @@ class BaseJS {
                     } else if (format == "validateDate") {
                         td.addClass('validateDate');
                     }
-                    //hiển thị row-selected lên dialog
-                    $(tr).data('data', obj); // lưu cả object vào attribute là data
+                    $(tr).data('keyId', obj[keyId]); // lưu Employee.EmployeeId vào attribute là data
+
                     $(tr).append(td); //append từng thằng td vào tr
 
                 })
-                debugger
                 $('#tbListData tbody').append(tr);
             })
 
 
         }).fail(function response() {
-            debugger
         })
+    }
+
+    /**
+ * Hàm dùng chung để lấy ra id của row được chọn
+ * Author: DVTHANG(02/10/2020)
+ * */
+    getRecordIdSelected() {
+        //Lấy id của bản ghi được chọn
+        var rowId = null;
+        debugger
+        var recordSelected = $('#tbListData tbody .row-selected');
+        //Lấy dữ liệu chi tiết của bản ghi đó
+        if (recordSelected.length > 0) {
+            rowId = $(recordSelected).data("keyId");
+        }
+        return rowId;
+
     }
 
 
@@ -88,8 +105,6 @@ class BaseJS {
      * Author: DVTHANG(13/10/2020)
      * */
     loadDepartment() {
-        debugger
-
         $.ajax({
             url: "/api/departments",
             method: "GET",
@@ -101,9 +116,7 @@ class BaseJS {
                 console.log(department.departmentName);
                 $("#departmentName").append($('<option></option>').val(department.departmentId).text(department.departmentName));
             })
-            debugger
         }).fail(function (response) {
-            debugger
         })
     }
 
@@ -113,7 +126,6 @@ class BaseJS {
      * Author: DVTHANG(13/10/2020)
      * */
     loadPosition() {
-        debugger
         $.ajax({
             url: "/api/positions",
             method: "GET",
@@ -125,9 +137,7 @@ class BaseJS {
                 console.log(position.positionName);
                 $("#positionName").append($('<option></option>').val(position.positionId).text(position.positionName));
             })
-            debugger
         }).fail(function (response) {
-            debugger
         })
     }
 
@@ -147,6 +157,8 @@ class BaseJS {
         $('#btnDelete').click(this.btnDeleteOnClick.bind(this));
         $('#buttonYes').click(this.btnYesButton.bind(this));
         $('#buttonNo').click(this.btnNoButton.bind(this));
+        $('#buttonCloseNoti').click(this.onHiddenDialogNoti.bind(this));
+        /*        $('#buttonCloseNotiEdit').click(this.onHiddenDialogNotiEdit.bind(this));*/
     }
 
     /**
@@ -154,7 +166,6 @@ class BaseJS {
      * Author: DVTHANG(02/10/2020)
      * */
     btnEditOnClick() {
-        debugger
         this.FormMode = "Edit";
         var self = this;
         //Hiển thị form chi tiết
@@ -199,7 +210,6 @@ class BaseJS {
                     customerNew["Email"] = $("#txtCustomerEmail").val();
                     //2. Gọi api service thực hiện cất dữ liệu
                     if (self.FormMode == "Edit") {
-                        debugger
                         $.ajax({
                             url: "/customer",
                             method: "PUT",
@@ -209,7 +219,6 @@ class BaseJS {
                         }).done(function (response) {
                             if (response) {
                                 self.loadData();
-                                debugger
                             }
                         }).fail(function () {
 
@@ -221,13 +230,9 @@ class BaseJS {
             })
 
         } else {
-            alert("Vui long chon row ban muon sua!");
+            var noti = "Vui lòng chọn row để sửa!";
+            this.onShowDialogNoti(noti);
         }
-
-
-
-
-
 
         /* this.FormMode = 'Edit';
          //Lấy thông tin bản ghi đã chọn trong danh sách
@@ -267,7 +272,6 @@ class BaseJS {
         $(".model").hide();
     }
 
-
     /**
      * Hàm show dialog Confirm Delete
      * Author: DVTHANG(04/10/2020)
@@ -276,6 +280,26 @@ class BaseJS {
         $("#dialogConfirm").show();
         $(".model").show();
     }
+
+
+    /**
+  * Hàm ẩn dialog Delete Noti
+  * Author: DVTHANG(04/10/2020)
+  * */
+    onHiddenDialogNoti() {
+        $("#dialogNoti").hide();
+        $(".model").hide();
+    }
+
+    /**
+     * Hàm show dialog Delete Noti
+     * Author: DVTHANG(04/10/2020)
+     * */
+    onShowDialogNoti(abc) {
+        $("#mySpan").text(abc);
+        $("#dialogNoti").show();
+        $(".model").show();
+    } 
 
     /**
      * Hàm sự kiện cho nút Xóa
@@ -286,25 +310,11 @@ class BaseJS {
         //Lấy id của bản ghi được chọn
         var id = this.getRecordIdSelected();
         if (!id) {
-            alert("Vui long chon row ban muon xoa!");
+            var noti = "Vui lòng chọn nhân viên muốn xóa!";
+            this.onShowDialogNoti(noti);
         } else {
             this.onShowDialogConfirm();
-            /* $.ajax({
-                 url: "/customer/" + id,
-                 method: "DELETE"
-             }).done(function (response) {
-                 if (response) {
-                     alert("xoa thanh cong");
-                    
-                 } else {
-                     alert("Customer ko ton tai!");
-                 }
-                 self.loadData();
-             }).fail(function () {
-                 alert("Vui long kiem tra lai");
-             })*/
         }
-
     }
 
     /**
@@ -312,16 +322,18 @@ class BaseJS {
      * Author: DVTHANG(04/10/2020)
      * */
     btnYesButton() {
+        debugger
         var self = this;
         var id = this.getRecordIdSelected();
         $.ajax({
-            url: "/customer/" + id,
+            url: "/api/Employees/" + id,
             method: "DELETE"
         }).done(function (response) {
             if (response) {
                 self.onHiddenDialogConfirm();
             } else {
-                alert("Customer ko ton tai!");
+                var noti = "Employee không tồn tại!";
+               this.onShowDialogNoti(noti);
             }
             self.loadData();
 
@@ -339,22 +351,6 @@ class BaseJS {
         this.onHiddenDialogConfirm();
     }
 
-
-    /**
-     * Hàm dùng chung để lấy ra id của row được chọn
-     * Author: DVTHANG(02/10/2020)
-     * */
-    getRecordIdSelected() {
-        //Lấy id của bản ghi được chọn
-        var customerCode = null;
-        var recordSelected = $('#tbListData tbody tr.row-selected');
-        //Lấy dữ liệu chi tiết của bản ghi đó
-        if (recordSelected.length > 0) {
-            customerCode = $(recordSelected).children()[0].textContent;
-        }
-        debugger
-        return customerCode;
-    }
 
     /**
      * Hàm xử lí lưu dữ liệu nhập vào trên form
@@ -385,25 +381,24 @@ class BaseJS {
         if (isValid) {
             //2. Build object cần lưu:
             var inputs = $('input[fieldName]');
-            var customer = {};
+            var object = {};
             $.each(inputs, function (index, input) {
                 var fieldName = $(input).attr('fieldName');
                 var value = $(input).val();
-                customer[fieldName] = value;
+                object[fieldName] = value;
             })
 
             //3. thêm dữ liệu vào đối tượng
             if (self.FormMode == 'Add') {
                 alert('add');
                 $.ajax({
-                    url: "/customer",
+                    url: "/api/Employees",
                     method: "POST",
-                    data: JSON.stringify(customer),
+                    data: JSON.stringify(object),
                     contentType: "application/json",
                     dataType: "json"
 
                 }).done(function (response) {
-
                     self.loadData();
                     self.FormMode = null;
                     //4. Xử lý sau khi lưu dữ liệu
@@ -424,14 +419,11 @@ class BaseJS {
     * Author: DVTHANG(25/05/2020)
     * */
     onShowDialogAdd() {
-
         $('.table-contentInfor input').val(null);  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
         $(".employee-background").show();
         $(".model").show();
         $("#txtEmployeeCode").focus();  //khi người dùng ấn vào nút show Dialog, thì sẽ focus luôn vào chỗ nhập text EmployeeCode
-        $("#txtCustomerCode").focus();
     }
-
 
     /**
      * Hàm re-load data
@@ -449,16 +441,21 @@ class BaseJS {
     onHiddenDialog() {
         $(".employee-background").hide();
         $(".model").hide();
-
     }
 
     /**
-    * hàm để khi click vào 1 row, row được chọn đó sẽ đổi màu
-    * Author: DVTHANG(25/09/2020)
-    * */
+* hàm để khi click vào 1 row, row được chọn đó sẽ đổi màu
+* Author: DVTHANG(25/09/2020)
+* */
     rowOnClick() {
         $(this).addClass('row-selected');
         $(this).siblings().removeClass('row-selected');
     }
+
+
+
 }
+
+
+
 

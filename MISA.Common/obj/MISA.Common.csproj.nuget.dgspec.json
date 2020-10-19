@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {}
+    "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {}
   },
   "projects": {
-    "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
+    "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
+        "projectUniqueName": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
         "projectName": "MISA.Common",
-        "projectPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "D:\\Hoctap\\MISA\\MISA.DemoAPI\\MISA.Common\\obj\\",
+        "projectPath": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\MISA.Common.csproj",
+        "packagesPath": "C:\\Users\\dvthang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dvthang\\Desktop\\MISA Project\\MISA.DemoAPI\\MISA.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
