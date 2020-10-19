@@ -329,10 +329,10 @@
                                         <td><input fieldName="dateOfBirth" style="width: 89%" type="date" /></td>
                                         <td>Giới tính</td>
                                         <td>
-                                            <select fieldName="dateOfBirth" style="width: 95.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
-                                                <option value="male">Nam</option>
-                                                <option value="female">Nữ</option>
-                                                <option value="other">Khác</option>
+                                            <select fieldName="gender" style="width: 95.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
+                                                <option value="1">Nam</option>
+                                                <option value="2">Nữ</option>
+                                                <option value="0">Khác</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -346,13 +346,13 @@
                                     </tr>
                                     <tr>
                                         <td>Số CMT</td>
-                                        <td><input style="width: 89%;" type="text" /></td>
+                                        <td><input fieldName="identityNumber" style="width: 89%;" type="text" /></td>
                                         <td>Ngày cấp</td>
-                                        <td><input style="width: 89.7%" type="date" /></td>
+                                        <td><input fieldName="identityDate" style="width: 89.7%" type="date" /></td>
                                     </tr>
                                     <tr>
                                         <td>Nơi cấp CMT</td>
-                                        <td><input class="employee-inputInforIdenityPlace" type="text" /></td>
+                                        <td><input fieldName="identityPlace" class="employee-inputInforIdenityPlace" type="text" /></td>
                                     </tr>
                                 </table>
                             </div>
@@ -369,7 +369,7 @@
                             <tr>
                                 <td style="width: 116px">Vị trí</td>
                                 <td>
-                                    <select class="inputSelected" id="positionName" name="departmentName">
+                                    <select fieldName="PositionName" class="inputSelected" id="positionName" name="departmentName">
 
                                         <option value="s">Select</option>
                                     </select>
@@ -378,7 +378,7 @@
                             <tr>
                                 <td>Phòng ban</td>
                                 <td>
-                                    <select class="inputSelected" id="departmentName" name="departmentName">
+                                    <select fieldName="departmentName" class="inputSelected" id="departmentName" name="departmentName">
 
                                         <option value="s">Select</option>
                                     </select>
@@ -386,13 +386,13 @@
                             </tr>
                             <tr>
                                 <td>Mã số thuế cá nhân</td>
-                                <td style="width:29%"><input type="text" class="infoInput-text2" /></td>
+                                <td style="width:29%"><input fieldName="taxCode" type="text" class="infoInput-text2" /></td>
                                 <td style="width: 67px">Mức lương</td>
-                                <td><input style="width: 97.6%" type="text" class="infoInput-text2" /></td>
+                                <td><input fieldName="salary" style="width: 97.6%" type="text" class="infoInput-text2" /></td>
                             </tr>
                             <tr>
                                 <td>Ngày gia nhập</td>
-                                <td><input class="infoInput-text2" type="date" /></td>
+                                <td><input fieldName="joinDate" class="infoInput-text2" type="date" /></td>
                                 <td>Tình trạng</td>
                                 <td>
                                     <select style="width: 100.7%" class="workStatus" id="workStatus">

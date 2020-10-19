@@ -8,7 +8,10 @@ namespace MISA.Common.Models
 {
     public class Employee
     {
-
+        public Employee()
+        {
+            EmployeeId = Guid.NewGuid();
+        }
         public Guid EmployeeId { get; set; }
 
         public String EmployeeCode { get; set; }
