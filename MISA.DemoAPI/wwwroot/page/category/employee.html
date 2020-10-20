@@ -88,7 +88,7 @@
                 <div class="menu-item-text">Ứng dụng</div>
             </div>
 
-            <div class="menu-item">
+            <!--<div class="menu-item">
                 <div class="menu-item-icon-online"></div>
                 <div class="menu-item-text">Bán hàng Online</div>
             </div>
@@ -107,7 +107,7 @@
             <div class="menu-item">
                 <div class="menu-item-icon-phone"></div>
                 <div class="menu-item-text-phone">Thuê bao</div>
-            </div>
+            </div>-->
         </div>
 
     </div>
@@ -130,7 +130,7 @@
             </div>
 
 
-            <div class="header-dropdown-language">
+            <div class="header-dropdown-language2">
                 <select name="#" id="color">
                     <option value="volvo">Tiếng Việt(Tiếng Việt)</option>
                     <option value="saab">Tiếng Nhật</option>
@@ -143,9 +143,9 @@
                 <i class="fa fa-globe" aria-hidden="true" style="font-size:30px;"></i>
             </div>
 
-            <div class="header-question">
+            <!--<div class="header-question">-->
                 <!--<img src="/content/img/logoMisa.png" />-->
-            </div>
+            <!--</div>-->
 
 
             <div class="header-phone">
@@ -179,12 +179,12 @@
                 </div>
                 <div class="content-header-employee">Nhân viên</div>
                 <div class="content-header-space"></div>
-                <button class="content-header-setting">Quay lại thiết lập ban đầu</button>
+                <!--<button class="content-header-setting">Quay lại thiết lập ban đầu</button>
 
                 <button class="content-header-feedbackFather">
                     <div class="content-header-feedbackIcon"></div>
                     <div class="content-header-feedbackText">Phản hồi</div>
-                </button>
+                </button>-->
             </div>
             <div class="content-table">
                 <div class="content-table-header">
@@ -326,19 +326,19 @@
                                     </tr>
                                     <tr>
                                         <td>Ngày sinh</td>
-                                        <td><input fieldName="dateOfBirth" style="width: 89%" type="date" /></td>
+                                        <td><input format="date" fieldName="dateOfBirth" style="width: 89%" type="date" /></td>
                                         <td>Giới tính</td>
                                         <td>
                                             <select fieldName="gender" style="width: 95.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
-                                                <option value="1">Nam</option>
-                                                <option value="2">Nữ</option>
-                                                <option value="0">Khác</option>
+                                                <option value="0">Nam</option>
+                                                <option value="1">Nữ</option>
+                                                <option value="2">Khác</option>
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Email <span style="color:red">(*)</span></td>
-                                        <td><input fieldName="email" required class="employee-inputInforCommon" type="text" /></td>
+                                        <td><input fieldName="email" required emailCheck class="employee-inputInforCommon" type="text" /></td>
                                     </tr>
                                     <tr>
                                         <td>ĐT di động <span style="color:red">(*)</span></td>
@@ -348,7 +348,7 @@
                                         <td>Số CMT</td>
                                         <td><input fieldName="identityNumber" style="width: 89%;" type="text" /></td>
                                         <td>Ngày cấp</td>
-                                        <td><input fieldName="identityDate" style="width: 89.7%" type="date" /></td>
+                                        <td><input format="date" fieldName="identityDate" style="width: 89.7%" type="date" /></td>
                                     </tr>
                                     <tr>
                                         <td>Nơi cấp CMT</td>
@@ -369,18 +369,17 @@
                             <tr>
                                 <td style="width: 116px">Vị trí</td>
                                 <td>
-                                    <select fieldName="PositionName" class="inputSelected" id="positionName" name="departmentName">
-
-                                        <option value="s">Select</option>
+                                    <select fieldName="positionId" class="inputSelected" id="positionName" name="departmentName">
+                                        <!--<option value="s">Select</option>-->
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Phòng ban</td>
                                 <td>
-                                    <select fieldName="departmentName" class="inputSelected" id="departmentName" name="departmentName">
+                                    <select fieldName="departmentId" class="inputSelected" id="departmentName" name="departmentName">
 
-                                        <option value="s">Select</option>
+                                        <!--<option value="s">Select</option>-->
                                     </select>
                                 </td>
                             </tr>
@@ -388,17 +387,21 @@
                                 <td>Mã số thuế cá nhân</td>
                                 <td style="width:29%"><input fieldName="taxCode" type="text" class="infoInput-text2" /></td>
                                 <td style="width: 67px">Mức lương</td>
-                                <td><input fieldName="salary" style="width: 97.6%" type="text" class="infoInput-text2" /></td>
+                                <td><input fieldName="salary" format="money" style="width: 97.6%" type="text" class="infoInput-text2" /></td>
                             </tr>
                             <tr>
                                 <td>Ngày gia nhập</td>
-                                <td><input fieldName="joinDate" class="infoInput-text2" type="date" /></td>
+                                <td><input fieldName="joinDate" format="date" class="infoInput-text2" type="date" /></td>
                                 <td>Tình trạng</td>
                                 <td>
-                                    <select style="width: 100.7%" class="workStatus" id="workStatus">
-                                        <option value="male">Đang làm việc</option>
-                                        <option value="female">Nghỉ việc</option>
-                                        <option value="other">Khác</option>
+                                    <select fieldName="workStatus" style="width: 100.7%" class="workStatus" id="workStatus">
+                                        <option value="0">Thử việc</option>
+                                        <option value="1">Đang làm việc</option>
+                                        <option value="2">Nghỉ việc</option>
+                                        <option value="3">Làm tại nhà</option>
+                                        <option value="4">Đã nghỉ</option>
+                                        <option value="5">Chính thức</option>
+                                        <option value="6">Đuổi việc</option>
                                     </select>
                                 </td>
                             </tr>

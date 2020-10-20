@@ -130,39 +130,25 @@ namespace MISA.DataAccessLayer.DatabaseAccess
 
 
         /// <summary>
-        /// Sửa 1 nhân viên theo Id
+        /// Update entity
         /// AUTHOR: DVTHANG(13/10/2020)
         /// </summary>
-        /// <param name="id">Id của nhân viên</param>
         public int update(T entity)
         {
-            var employee = entity as Employee;
-            _sqlCommand.CommandText = "PROC_UpdateEmployee";
-
-            //Gán giá trị đầu vào cho các tham số trong procedures:
-            _sqlCommand.Parameters.AddWithValue("@EmployeeId", employee.EmployeeId);
-            _sqlCommand.Parameters.AddWithValue("@EmployeeCode", employee.EmployeeCode);
-            _sqlCommand.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
-            _sqlCommand.Parameters.AddWithValue("@Gender", employee.Gender);
-            _sqlCommand.Parameters.AddWithValue("@Email", employee.Email);
-            _sqlCommand.Parameters.AddWithValue("@DateOfBirth", employee.DateOfBirth);
-            _sqlCommand.Parameters.AddWithValue("@PhoneNumber", employee.PhoneNumber);
-            _sqlCommand.Parameters.AddWithValue("@IdentityNumber", employee.IdentityNumber);
-            _sqlCommand.Parameters.AddWithValue("@IdentityDate", employee.IdentityDate);
-            _sqlCommand.Parameters.AddWithValue("@IdentityPlace", employee.IdentityPlace);
-            _sqlCommand.Parameters.AddWithValue("@PositionId", employee.PositionId);
-            _sqlCommand.Parameters.AddWithValue("@DepartmentId", employee.DepartmentId);
-            _sqlCommand.Parameters.AddWithValue("@TaxCode", employee.TaxCode);
-            _sqlCommand.Parameters.AddWithValue("@Salary", employee.Salary);
-            _sqlCommand.Parameters.AddWithValue("@JoinDate", employee.JoinDate);
-            _sqlCommand.Parameters.AddWithValue("@WorkStatus", employee.WorkStatus);
-            //mySqlCommand.Parameters.AddWithValue("@CreatedDate", employee.CreatedDate);
-
-
-            var affectRows = _sqlCommand.ExecuteNonQuery();   //Trả về số dòng bị ảnh hưởng như thêm, sửa xóa được bao nhiêu dòng
-
-            return affectRows;
-
+            var entityName = typeof(T).Name;
+            _sqlCommand.Parameters.Clear();
+            _sqlCommand.CommandText = $"Proc_Update{entityName}";
+            MySqlCommandBuilder.DeriveParameters(_sqlCommand);
+            var parameters = _sqlCommand.Parameters;
+            foreach (MySqlParameter param in parameters)
+            {
+                var paramName = param.ParameterName.Replace("@", string.Empty);
+                var property = entity.GetType().GetProperty(paramName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                if (property != null)
+                    param.Value = property.GetValue(entity);
+            }
+            var result = _sqlCommand.ExecuteNonQuery();
+            return result;
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
-﻿
-/**
+﻿/**
  * Class EmployeeJS dùng để quản lý các function
  * Author: DVTHANG(23/09/2020)
  * */
@@ -9,7 +8,6 @@ class BaseJS {
     constructor() {
         //Gán mặc định FormMode:
         this.FormMode = null;
-        this.getData();
         this.loadData();
         this.loadDepartment();
         this.loadPosition();
@@ -17,7 +15,15 @@ class BaseJS {
         this.onHiddenDialog();
         this.onHiddenDialogConfirm();
         this.onHiddenDialogNoti();
-        /*        this.onHiddenDialogNotiEdit();*/
+        this.getUrl();
+    }
+
+    /**
+     * Hàm lấy Url cho employee
+     * Author: DVTHANG(20/10/2020)
+     * */
+    getUrl() {
+
     }
 
     /**
@@ -25,10 +31,9 @@ class BaseJS {
     *  Author: DVTHANG(23/09/2020)
     * */
     loadData() {
-
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
         $.ajax({
-            url: "/api/employees",
+            url: this.getUrl(),
             method: "GET",
             data: "",
             contentType: "application/json",
@@ -57,9 +62,7 @@ class BaseJS {
                     else {
                         var value = (obj[fieldName] || (" "));  // obj[fieldName] giống với customer.[CustomerCode], ||(" ") là nếu bị sai trường, sẽ hiển thị khoảng trắng thay vì hiển thị underfine
                     }
-
                     var td = $(`<td>` + value + `</td>`);   //tạo ra các td
-
                     //căn chỉnh trái phải giữa cho number, string, date, money
                     var format = $(field).attr(`format`);
                     if (format == "validateString") {
@@ -69,15 +72,11 @@ class BaseJS {
                     } else if (format == "validateDate") {
                         td.addClass('validateDate');
                     }
-                    $(tr).data('keyId', obj[keyId]); // lưu Employee.EmployeeId vào attribute là data
-
+                    $(tr).data('keyId', obj[keyId]); // lưu Employee.EmployeeId vào attribute là keyId
                     $(tr).append(td); //append từng thằng td vào tr
-
                 })
                 $('#tbListData tbody').append(tr);
             })
-
-
         }).fail(function response() {
         })
     }
@@ -89,14 +88,12 @@ class BaseJS {
     getRecordIdSelected() {
         //Lấy id của bản ghi được chọn
         var rowId = null;
-
         var recordSelected = $('#tbListData tbody .row-selected');
         //Lấy dữ liệu chi tiết của bản ghi đó
         if (recordSelected.length > 0) {
             rowId = $(recordSelected).data("keyId");
         }
         return rowId;
-
     }
 
 
@@ -113,13 +110,11 @@ class BaseJS {
             dataType: ""
         }).done(function (response) {
             $.each(response, function (i, department) {
-                console.log(department.departmentName);
                 $("#departmentName").append($('<option></option>').val(department.departmentId).text(department.departmentName));
             })
         }).fail(function (response) {
         })
     }
-
 
     /**
      * Hàm load danh sách Position trong dialog
@@ -134,7 +129,6 @@ class BaseJS {
             dataType: ""
         }).done(function (response) {
             $.each(response, function (i, position) {
-                console.log(position.positionName);
                 $("#positionName").append($('<option></option>').val(position.positionId).text(position.positionName));
             })
         }).fail(function (response) {
@@ -158,7 +152,6 @@ class BaseJS {
         $('#buttonYes').click(this.btnYesButton.bind(this));
         $('#buttonNo').click(this.btnNoButton.bind(this));
         $('#buttonCloseNoti').click(this.onHiddenDialogNoti.bind(this));
-        /*        $('#buttonCloseNotiEdit').click(this.onHiddenDialogNotiEdit.bind(this));*/
     }
 
     /**
@@ -166,8 +159,8 @@ class BaseJS {
      * Author: DVTHANG(02/10/2020)
      * */
     btnEditOnClick() {
-        this.FormMode = "Edit";
         var self = this;
+        self.FormMode = "Edit";
         //Hiển thị form chi tiết
         //Lấy dữ liệu của nhân viên tương ứng đã chọn:
         //1. Xác định nhân viên nào được chọn:
@@ -176,7 +169,6 @@ class BaseJS {
             //2. Lấy thông tin Mã nhân viên:
             var id = this.getRecordIdSelected();
             this.onShowDialogAdd();
-            debugger
             //3. Gọi api service để lấy dữ liệu chi tiết của nhân viên vs mã tương ứng
             $.ajax({
                 url: "/api/Employees/" + id,
@@ -184,101 +176,46 @@ class BaseJS {
                 data: "",
                 contentType: "application/json",
                 dataType: ""
-            }).done(function (customer) {
-                debugger
-                if (!customer) {
-                    alert("Không có Mã nhân viên tương ứng!");
-                } else {
+            }).done(function (object) {
+                //1. Sau khi lấy được object, thì sẽ bindding dữ liệu lên dialog
+                var fields = $('.table-contentInfor input, .table-contentInfor select');
+                $.each(fields, function (index, field) {
+                    var fieldName = $(field).attr('fieldName');
+                    var format = $(field).attr('format');
+                    if (format == 'date') {
+                        field.value = commonJS.formatDate2(object[fieldName]);
+                    } else if (format == 'money') {
+                        field.value = (object[fieldName]).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                    } else {
+                        field.value = object[fieldName];
+                    }
 
-                    var objectDetail = recordSelected.data(customer);
-                    var inputs = $('input[fieldName]');
-                    $.each(inputs, function (index, input) {
-                        var fieldName = $(input).attr('fieldName');
-                        input.value = objectDetail[fieldName];
-                        if ($(input).attr('type') == 'date') {
-                            input.value = commonJS.formatDate(objectDetail[fieldName]);
+                })
+                //2. Gọi api service thực hiện cất dữ liệu
+                if (self.FormMode == "Edit") {
+                    $.ajax({
+                        url: "/api/Employees",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        contentType: "application/json",
+                        dataType: "json"
+                    }).done(function (response) {
+                        if (response) {
+                            self.loadData();
+                            debugger
                         }
-                    });
-                    alert("Okela");
-
-
-
-                    /* //Bindding các thông tin của nhân viên lên form
-                     $("#txtCustomerCode").val(customer["CustomerCode"]);
-                     $("#txtCustomerName").val(customer["CustomerName"]);
-                     $("#txtCustomerCompany").val(customer["CompanyName"]);
-                     $("#txtCustomerDateOfBirth").val(customer["DateOfBirth"]);
-                     $("#txtCustomerSalary").val(customer["Salary"]);
-                     $("#txtCustomerAddress").val(customer["Address"]);
-                     $("#txtCustomerPhone").val(customer["Mobile"]);
-                     $("#txtCustomerEmail").val(customer["Email"]);
- 
-                     *//*self.onShowDialogAdd();*//*
-                  //Chỉnh sửa dữ liệu trên form
-                  //Thực hiện cất dữ liệu đã chỉnh sửa
-                  //1. Thu thập thông tin đã chỉnh sửa
-                  var customerNew = {};
-                  customerNew["CustomerCode"] = $("#txtCustomerCode").val();
-                  customerNew["CustomerName"] = $("#txtCustomerName").val();
-                  customerNew["CompanyName"] = $("#txtCustomerCompany").val();
-                  customerNew["DateOfBirth"] = $("#txtCustomerDateOfBirth").val();
-                  customerNew["Salary"] = $("#txtCustomerSalary").val();
-                  customerNew["Address"] = $("#txtCustomerAddress").val();
-                  customerNew["Mobile"] = $("#txtCustomerPhone").val();
-                  customerNew["Email"] = $("#txtCustomerEmail").val();
-                  //2. Gọi api service thực hiện cất dữ liệu
-                  if (self.FormMode == "Edit") {
-                      $.ajax({
-                          url: "/customer",
-                          method: "PUT",
-                          data: JSON.stringify(customerNew),
-                          contentType: "application/json",
-                          dataType: "json"
-                      }).done(function (response) {
-                          if (response) {
-                              self.loadData();
-                              debugger
-                          }
-                      }).fail(function () {
-                          debugger
-                      })
-                  }*/
+                    }).fail(function () {
+                        debugger
+                    })
                 }
+
             }).fail(function (response) {
-                debugger
             })
 
         } else {
             var noti = "Vui lòng chọn row để sửa!";
             this.onShowDialogNoti(noti);
         }
-
-        /*  this.FormMode = 'Edit';
-          //Lấy thông tin bản ghi đã chọn trong danh sách
-          var recordSelected = $('#tbListData tbody tr.row-selected');
-          //Lấy dữ liệu chi tiết của bản ghi đó
-          var id = recordSelected.data('keyId');
-          if (recordSelected.length > 0) {
-              debugger
-              this.onShowDialogAdd();
-              var objectDetail = recordSelected.data('data');
-  
-              //Bindding dữ liệu vào các input tương ứng trên dialog
-              var inputs = $('input[fieldName]');
-              $.each(inputs, function (index, input) {
-                  var fieldName = $(input).attr('fieldName');
-                  input.value = objectDetail[fieldName];
-                  if ($(input).attr('type') == 'date') {
-                      input.value = commonJS.formatDate(objectDetail[fieldName]);
-                  }
-              });
-          } else {
-              alert("Vui long chon row ban muon sua!");
-          }*/
-
-        /* //Hiển thị dialog
-         $(".employee-background").show();
-         $(".model").show();*/
     }
 
     /**
@@ -376,18 +313,16 @@ class BaseJS {
      * Update: DVTHANG(1/10/2020): viết hàm base
      * */
     saveInfor() {
-
-        this.FormMode = "Add";   //Dùng chung 1 dialog, nên phải phân biệt add và edit
+        var self = this;
         //Các bước add employee vào table
         //1. validate dữ liệu(kiểm tra xem dữ liệu nhập trên form có đúng hay k)
-
+        var method = "POST";
         var inputRequireds = $("input[required]");  //các input có cùng thuộc tính required
         var emailCheck = $("input[emailCheck]"); //lấy các input có thuộc tính là emailCheck 
         var inputEmail = $(emailCheck).val();   //lấy ra value của input email
 
         var isValid = true;  //biến check valid của input required
         var isValidEmail = true;  //biến check valid của email input 
-        var self = this;
         $.each(inputRequireds, function (index, input) {
             var valid = $(input).trigger("blur");
             if (isValid && valid.hasClass("require-error")) {
@@ -400,47 +335,48 @@ class BaseJS {
             debugger
             //2. Build object cần lưu:
             var inputs = $('input[fieldName]');
+            var selects = $('select[fieldName]');
             var object = {};
             $.each(inputs, function (index, input) {
                 var fieldName = $(input).attr('fieldName');
                 var value = $(input).val();
+                if (fieldName == 'salary') {
+                    var value = parseFloat($(input).val());
+                }
                 object[fieldName] = value;
             })
-            var depart = $("#departmentName option:selected").text();
-            var departVal = $("#departmentName").val();
-            var pos = $("#positionName option:selected").text();
-            var posVal = $("#positionName").val();
 
-            var gender = $("#gender").val();
-            object["departmentName"] = depart;
-            object["departmentId"] = departVal;
-            object["positionName"] = pos;
-            object["positionId"] = posVal;
-            object["gender"] = parseInt(gender);
+            $.each(selects, function (index, select) {
+                var fieldName = $(select).attr('fieldName');
+                var value = $(select).val();
+                if (fieldName == 'gender') {
+                    var value = parseFloat($(select).val());
+                } else if (fieldName == 'workStatus') {
+                    var value = parseFloat($(select).val());
+                }
+                object[fieldName] = value;
+            })
             debugger
-
-            //3. thêm dữ liệu vào đối tượng
             if (self.FormMode == 'Add') {
-                alert('add');
-                $.ajax({
-                    url: "/api/Employees",
-                    method: "POST",
-                    data: JSON.stringify(object),
-                    contentType: "application/json",
-                    dataType: "json"
-                }).done(function (response) {
-                    self.loadData();
-                    self.FormMode = null;
-                    //4. Xử lý sau khi lưu dữ liệu
-                    self.onHiddenDialog();
-                    $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
-                    debugger
-                }).fail(function (response) {
-                    debugger
-                })
-            } else {
-                alert('edit');
+                method = "POST";
             }
+            //3. thêm dữ liệu vào đối tượng
+
+            $.ajax({
+                url: this.getUrl(),
+                method: method,
+                data: JSON.stringify(object),
+                contentType: "application/json"
+            }).done(function (response) {
+                self.loadData();
+                self.FormMode = null;
+                //4. Xử lý sau khi lưu dữ liệu
+                self.onHiddenDialog();
+                $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
+                debugger
+            }).fail(function (response) {
+                debugger
+            })
         }
     }
 
@@ -449,7 +385,9 @@ class BaseJS {
     * Author: DVTHANG(25/05/2020)
     * */
     onShowDialogAdd() {
+        this.FormMode = "Add";   //Dùng chung 1 dialog, nên phải phân biệt add và edit
         $('.table-contentInfor input').val(null);  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
+/*        $("#txtEmployeeCode").val(this.AutoUpperCode);*/
         $(".employee-background").show();
         $(".model").show();
         $("#txtEmployeeCode").focus();  //khi người dùng ấn vào nút show Dialog, thì sẽ focus luôn vào chỗ nhập text EmployeeCode
@@ -481,6 +419,57 @@ class BaseJS {
         $(this).addClass('row-selected');
         $(this).siblings().removeClass('row-selected');
     }
+
+    /**
+     * Hàm tự động tăng Mã +1
+     * Author: DVTHANG(20/10/2020)
+     * *//*
+    AutoUpperCode() {
+        var temp = $('tbody tr td:nth-child(1)');
+        var tempString = temp[0].textContent;
+        var head = "";
+        var last = "";
+        var chars = [];
+        for (var i = 0; i < tempString.length; i++) {
+            chars.push(tempString[i]);
+        }
+        $.each(chars, function (i, char) {
+            if ("A" <= char && char <= "Z") {
+                head = head + char;
+            } else {
+                last = last + char;
+            }
+        })
+        var numbers = [];
+        var codeArray = [];
+        var codes = $('tbody tr td:nth-child(1)');
+        $.each(codes, function (codeIndex, code) {
+            codeArray.push(code.innerHTML);
+        })
+        $.each(codeArray, function (index, code) {
+            var n = code.slice(head.length, code.length + 1);
+            var num = Number(n);
+            numbers.push(num);
+        })
+        var x = 1;
+        $.each(numbers, function (i, number) {
+            if (number == x) {
+                x++;
+            } else {
+                return false;
+            }
+        })
+        var s = String(x);
+        var l = last.length - s.length;
+        var newNum = "";
+        if (l > 0) {
+            for (var i = 0; i < l; i++) {
+                newNum = newNum + "0"
+            }
+        }
+        var newCode = head + newNum + x;
+        return newCode;
+    }*/
 
 
 

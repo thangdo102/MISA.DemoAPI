@@ -43,15 +43,30 @@
     .main .header-dropdown-language {
         width: 25%;
         height: 100%;
-        padding-left: 21px;
+/*        padding-left: 21px;*/
         padding-top: 10px;
     }
+
+    .main .header-dropdown-language2 {
+        width: 25%;
+        height: 100%;
+        /*        padding-left: 21px;*/
+        padding-top: 10px;
+    }
+
 
 .header-dropdown-language > select {
     background-color: #00488b;
     color: #ffffff;
     height: 31px;
-    width: 100%;
+    width: 77%;
+}
+
+.header-dropdown-language2 > select {
+    background-color: #00488b;
+    color: #ffffff;
+    height: 31px;
+    width: 77%;
 }
 
 
@@ -77,6 +92,8 @@
     width: 6%;
     height: 100%;
     margin-right: 15px;
+    min-width: 60px;
+    min-height: 50px;
 }
 
 .main .header-user {
@@ -103,7 +120,7 @@
     background-color: #006dbc;
     color: #ffffff;
     height: 31px;
-    width: 100%;
+    width: 115px;
     border: none;
 }
 
@@ -126,9 +143,10 @@
 
 .main .content-table {
     height: calc(100vh - 110px);
-    width: calc(99% - 10px);
+    width: calc(100% - 10px);
     background-color: #ffffff;
-    padding-left: 10px;
+    padding-left: 7px;
+    padding-top: 2px;
 }
 
 .main .content-header-category {
@@ -138,6 +156,7 @@
     font-size: 23px;
     font-weight: 600;
     margin-left: 11px;
+    margin-right: 3px;
 }
 
 .main .content-header-icon {
@@ -154,7 +173,7 @@
     min-width: 85px;
     text-align: center;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 22px;
     padding-top: 5px;
     color: rgba(0, 109, 188, 1);
 }
@@ -448,6 +467,7 @@
     margin-left: 10px;
     margin-top: 6px;
     background-size: 20px;
+    min-width: 30px;
 }
 
 .content-table .footer-backIcon2 {
@@ -458,6 +478,7 @@
     margin-left: 7px;
     margin-top: 6px;
     background-size: 20px;
+    min-width: 30px;
 }
 
 
@@ -482,6 +503,7 @@
     margin-left: 20px;
     margin-top: 6px;
     background-size: 20px;
+    min-width: 30px;
 }
 
 .content-table .footer-nextIcon2 {
@@ -492,6 +514,7 @@
     margin-left: 7px;
     margin-top: 6px;
     background-size: 20px;
+    min-width: 30px;
 }
 
 .content-table .footer-loadIcon {
@@ -502,6 +525,7 @@
     margin-left: 7px;
     margin-top: 6px;
     background-size: 20px;
+    min-width: 30px;
 }
 
 .content-table #cars {
@@ -525,13 +549,13 @@
 
 .content-table .footer-text2 {
     font-size: 100%;
-    margin-left: 56.5%;
+    margin-left: 40%;
     line-height: 32px;
 }
 
 .content-table .footer-text3 {
     font-size: 100%;
-    width: 5%;
+    width: 63px;
     margin-left: 10px;
     line-height: 32px;
 }
