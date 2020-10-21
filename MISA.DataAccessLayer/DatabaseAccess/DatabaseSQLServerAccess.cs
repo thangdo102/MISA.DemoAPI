@@ -133,7 +133,7 @@ namespace MISA.DataAccessLayer
             return affectRows;
         }
 
-        public int update(Employee employee)
+        public int update(Employee employee, Guid id)
         {
             _sqlCommand.CommandText = "PROC_UpdateEmployee";
 

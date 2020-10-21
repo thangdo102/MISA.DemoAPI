@@ -89,10 +89,10 @@ namespace MISA.DemoAPI.Controllers
         /// <param name="entity">entity cần edit </param>
         /// <returns></returns>
         // PUT api/<BaseApi>/5
-        [HttpPut("")]
-        public IActionResult Put([FromBody] T entity)
+        [HttpPut("{id}")]
+        public IActionResult Put([FromBody] T entity, Guid id)
         {
-            var effectRow = _baseService.update(entity);
+            var effectRow = _baseService.update(entity, id);
             if (effectRow > 0)
                 return CreatedAtAction("PUT", effectRow);
             else

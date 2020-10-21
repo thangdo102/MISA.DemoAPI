@@ -1,4 +1,8 @@
-﻿/**
+﻿$(document).ready(function () {
+    //load dữ liệu
+
+})
+/**
  * Class EmployeeJS dùng để quản lý các function
  * Author: DVTHANG(23/09/2020)
  * */
@@ -6,8 +10,6 @@ class BaseJS {
 
 
     constructor() {
-        //Gán mặc định FormMode:
-        this.FormMode = null;
         this.loadData();
         this.loadDepartment();
         this.loadPosition();
@@ -16,6 +18,7 @@ class BaseJS {
         this.onHiddenDialogConfirm();
         this.onHiddenDialogNoti();
         this.getUrl();
+        var FormMode;
     }
 
     /**
@@ -31,6 +34,7 @@ class BaseJS {
     *  Author: DVTHANG(23/09/2020)
     * */
     loadData() {
+        debugger
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
         $.ajax({
             url: this.getUrl(),
@@ -40,7 +44,7 @@ class BaseJS {
             dataType: ""
 
         }).done(function (response) {
-
+            debugger
             var fields = $('table#tbListData thead th');  //lấy tất cả các th  
             $('#tbListData tbody').empty();
             $.each(response, function (index, obj) {   //duyệt từng phần tử của mảng các đối tượng 
@@ -140,7 +144,7 @@ class BaseJS {
     * DVTHANG(23/09/2020)
     * */
     initEventEmp() {
-        $("#myButtonAdd").click(this.onShowDialogAdd.bind(this));
+        $("#myButtonAdd").click(this.onbtnAdd.bind(this));
         $("#btnAddNew").click(this.saveInfor.bind(this));
         $("input[required]").blur(validData.checkRequired); //dùng để gọi đến hàm checkRequired bên dưới ngay khi người dùng ko nhập các textinput có Attribute là required, ví dụ như txtEmployeeCode và txtEmployeeName
         $("#buttonClose").click(this.onHiddenDialog.bind(this));
@@ -160,15 +164,16 @@ class BaseJS {
      * */
     btnEditOnClick() {
         var self = this;
-        self.FormMode = "Edit";
         //Hiển thị form chi tiết
         //Lấy dữ liệu của nhân viên tương ứng đã chọn:
         //1. Xác định nhân viên nào được chọn:
         var recordSelected = $('#tbListData tbody tr.row-selected');
+
         if (recordSelected.length > 0) {
+            self.FormMode = "Edit";
             //2. Lấy thông tin Mã nhân viên:
             var id = this.getRecordIdSelected();
-            this.onShowDialogAdd();
+            this.showDialog();
             //3. Gọi api service để lấy dữ liệu chi tiết của nhân viên vs mã tương ứng
             $.ajax({
                 url: "/api/Employees/" + id,
@@ -178,37 +183,19 @@ class BaseJS {
                 dataType: ""
             }).done(function (object) {
                 //1. Sau khi lấy được object, thì sẽ bindding dữ liệu lên dialog
+                self.showDialog();
                 var fields = $('.table-contentInfor input, .table-contentInfor select');
                 $.each(fields, function (index, field) {
                     var fieldName = $(field).attr('fieldName');
                     var format = $(field).attr('format');
                     if (format == 'date') {
                         field.value = commonJS.formatDate2(object[fieldName]);
-                    } else if (format == 'money') {
-                        field.value = (object[fieldName]).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-                    } else {
+                    }
+                    else {
                         field.value = object[fieldName];
                     }
 
                 })
-                //2. Gọi api service thực hiện cất dữ liệu
-                if (self.FormMode == "Edit") {
-                    $.ajax({
-                        url: "/api/Employees",
-                        method: "PUT",
-                        data: JSON.stringify(object),
-                        contentType: "application/json",
-                        dataType: "json"
-                    }).done(function (response) {
-                        if (response) {
-                            self.loadData();
-                            debugger
-                        }
-                    }).fail(function () {
-                        debugger
-                    })
-                }
-
             }).fail(function (response) {
             })
 
@@ -238,9 +225,9 @@ class BaseJS {
 
 
     /**
-  * Hàm ẩn dialog Delete Noti
-  * Author: DVTHANG(04/10/2020)
-  * */
+    * Hàm ẩn dialog Delete Noti
+    * Author: DVTHANG(04/10/2020)
+    * */
     onHiddenDialogNoti() {
         $("#dialogNoti").hide();
         $(".model").hide();
@@ -293,7 +280,8 @@ class BaseJS {
             self.loadData();
 
         }).fail(function () {
-            alert("Vui long kiem tra lai");
+            var noti = "Vui lòng kiểm tra lại!";
+            onShowDialogNoti(noti);
         })
     }
 
@@ -316,7 +304,8 @@ class BaseJS {
         var self = this;
         //Các bước add employee vào table
         //1. validate dữ liệu(kiểm tra xem dữ liệu nhập trên form có đúng hay k)
-        var method = "POST";
+        /*        var method = "POST";*/
+        var idSelected = this.getRecordIdSelected();
         var inputRequireds = $("input[required]");  //các input có cùng thuộc tính required
         var emailCheck = $("input[emailCheck]"); //lấy các input có thuộc tính là emailCheck 
         var inputEmail = $(emailCheck).val();   //lấy ra value của input email
@@ -329,7 +318,6 @@ class BaseJS {
                 isValid = false;
             }
         })
-
         //nếu required input và email input hợp lệ thì sẽ tiến thành các bước tiếp theo
         if (isValid) {
             debugger
@@ -357,42 +345,63 @@ class BaseJS {
                 object[fieldName] = value;
             })
             debugger
-            if (self.FormMode == 'Add') {
-                method = "POST";
+            if (this.FormMode == "Add") {
+                debugger
+                $.ajax({
+                    url: this.getUrl(),
+                    method: "POST",
+                    data: JSON.stringify(object),
+                    contentType: "application/json"
+                }).done(function (response) {
+                    self.loadData();
+                    self.FormMode = null;
+                    $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
+                    debugger
+                }).fail(function (response) {
+                    debugger
+                })
+            } else if (this.FormMode == "Edit") {
+                debugger
+                $.ajax({
+                    url: "/api/Employees/" + idSelected,
+                    method: "PUT",
+                    data: JSON.stringify(object),
+                    contentType: "application/json",
+                    dataType: "json"
+                }).done(function (response) {
+                    if (response) {
+                        self.loadData();
+                        self.FormMode = null;
+                        debugger
+                    }
+                }).fail(function () {
+                    debugger
+                });
             }
-            //3. thêm dữ liệu vào đối tượng
-
-            $.ajax({
-                url: this.getUrl(),
-                method: method,
-                data: JSON.stringify(object),
-                contentType: "application/json"
-            }).done(function (response) {
-                self.loadData();
-                self.FormMode = null;
-                //4. Xử lý sau khi lưu dữ liệu
-                self.onHiddenDialog();
-                $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
-                debugger
-            }).fail(function (response) {
-                debugger
-            })
+            self.onHiddenDialog();
         }
     }
 
     /**
-    * Hiển thị Dialog: Thêm mới một Employee
-    * Author: DVTHANG(25/05/2020)
+    * Event của nút Add new
+    * Author: DVTHANG(25/09/2020)
     * */
-    onShowDialogAdd() {
+    onbtnAdd() {
         this.FormMode = "Add";   //Dùng chung 1 dialog, nên phải phân biệt add và edit
+        this.showDialog();
+    }
+    /**
+     * Hàm show dialog Add
+     * Author: DVTHANG(21/10/2020)
+     * */
+    showDialog() {
         $('.table-contentInfor input').val(null);  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
-/*        $("#txtEmployeeCode").val(this.AutoUpperCode);*/
+               $("#txtEmployeeCode").val(this.AutoUpperCode);
         $(".employee-background").show();
         $(".model").show();
         $("#txtEmployeeCode").focus();  //khi người dùng ấn vào nút show Dialog, thì sẽ focus luôn vào chỗ nhập text EmployeeCode
-    }
 
+    }
     /**
      * Hàm re-load data
      * Author: DVTHANG(2/10/2020)
@@ -402,7 +411,7 @@ class BaseJS {
         this.loadData();
     }
 
-    /**
+    /**-
     * Ẩn Diaglog Thêm Employee, ẩn lớp màn Model
     * Author: DVTHANG(25/05/2020)
     * */
@@ -423,7 +432,7 @@ class BaseJS {
     /**
      * Hàm tự động tăng Mã +1
      * Author: DVTHANG(20/10/2020)
-     * *//*
+     * */
     AutoUpperCode() {
         var temp = $('tbody tr td:nth-child(1)');
         var tempString = temp[0].textContent;
@@ -469,12 +478,7 @@ class BaseJS {
         }
         var newCode = head + newNum + x;
         return newCode;
-    }*/
-
-
+    }
 
 }
-
-
-
 

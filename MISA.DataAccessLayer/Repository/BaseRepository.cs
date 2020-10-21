@@ -44,9 +44,9 @@ namespace MISA.DataAccessLayer.Repository
             return _databaseContext.Insert(entity);
         }
 
-        public int update(T entity)
+        public int update(T entity, Guid id)
         {
-            return _databaseContext.update(entity);
+            return _databaseContext.update(entity, id);
         }
         #endregion
     }

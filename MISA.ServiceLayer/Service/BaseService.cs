@@ -70,9 +70,9 @@ namespace MISA.BusinessLayer.Service
             
         }
 
-        public int update(T entity)
+        public int update(T entity, Guid id)
         {
-            return _baseRepository.update(entity);
+            return _baseRepository.update(entity, id);
         }
         #endregion
     }

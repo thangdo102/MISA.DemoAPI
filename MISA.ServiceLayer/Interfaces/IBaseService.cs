@@ -36,7 +36,7 @@ namespace MISA.BusinessLayer.Interfaces
         /// </summary>
         /// <param name="entity">Đối tượng cần update</param>
         /// <returns></returns>
-        int update(T entity);
+        int update(T entity, Guid id);
 
         /// <summary>
         /// XÓa 1 đôi tượng

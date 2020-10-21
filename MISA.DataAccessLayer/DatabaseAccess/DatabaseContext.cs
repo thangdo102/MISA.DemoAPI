@@ -133,11 +133,14 @@ namespace MISA.DataAccessLayer.DatabaseAccess
         /// Update entity
         /// AUTHOR: DVTHANG(13/10/2020)
         /// </summary>
-        public int update(T entity)
+        public int update(T entity, Guid id)
         {
-            var entityName = typeof(T).Name;
+            //Khai báo câu truy vấn để lấy ra danh sách nhân viên
+            var className = typeof(T).Name;
+            _sqlCommand.CommandText = $"PROC_Update{className}";
+            //Gán giá trị đầu vào cho các tham số trong store
             _sqlCommand.Parameters.Clear();
-            _sqlCommand.CommandText = $"Proc_Update{entityName}";
+            var properties = typeof(T).GetProperties();
             MySqlCommandBuilder.DeriveParameters(_sqlCommand);
             var parameters = _sqlCommand.Parameters;
             foreach (MySqlParameter param in parameters)
@@ -145,8 +148,18 @@ namespace MISA.DataAccessLayer.DatabaseAccess
                 var paramName = param.ParameterName.Replace("@", string.Empty);
                 var property = entity.GetType().GetProperty(paramName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
                 if (property != null)
-                    param.Value = property.GetValue(entity);
+                {
+                    if (param.ParameterName == $"@{className}Id")
+                    {
+                        param.Value = id;
+                    }
+                    else
+                    {
+                        param.Value = property.GetValue(entity);
+                    }
+                }
             }
+            //Thực thi công việc thêm dữ liệu vào bảng Employee:
             var result = _sqlCommand.ExecuteNonQuery();
             return result;
         }
