@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MISA.BusinessLayer.Interfaces
 {
-    public interface IEmployeeService: IBaseService<Employee>
+    public interface IEmployeeService : IBaseService<Employee>
     {
         /// <summary>
         ///check trùng mã nhân viên 
@@ -21,7 +21,7 @@ namespace MISA.BusinessLayer.Interfaces
         /// </summary>
         /// <param name="identityNumber">Số chứng minh thư</param>
         /// <returns>true: có, false: không</returns>
-        bool checkEmployeeByIdentityNumber(String identityNumber);
+       /* bool checkEmployeeByIdentityNumber(String identityNumber);*/
 
         /// <summary>
         ///check trùng số điện thoại 
@@ -29,6 +29,6 @@ namespace MISA.BusinessLayer.Interfaces
         /// </summary>
         /// <param name="phoneNumber">Số điện thoại</param>
         /// <returns>true: có, false: không</returns>
-        bool checkEmployeeByPhoneNumber(String phoneNumber);
+       /* bool checkEmployeeByPhoneNumber(String phoneNumber);*/
     }
 }

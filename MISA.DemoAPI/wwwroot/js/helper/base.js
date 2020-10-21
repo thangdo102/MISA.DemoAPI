@@ -19,7 +19,9 @@ class BaseJS {
         this.onHiddenDialogNoti();
         this.getUrl();
         var FormMode;
+        this.getLastedEmployeeCode();
     }
+
 
     /**
      * Hàm lấy Url cho employee
@@ -94,6 +96,7 @@ class BaseJS {
         var rowId = null;
         var recordSelected = $('#tbListData tbody .row-selected');
         //Lấy dữ liệu chi tiết của bản ghi đó
+        debugger
         if (recordSelected.length > 0) {
             rowId = $(recordSelected).data("keyId");
         }
@@ -156,6 +159,7 @@ class BaseJS {
         $('#buttonYes').click(this.btnYesButton.bind(this));
         $('#buttonNo').click(this.btnNoButton.bind(this));
         $('#buttonCloseNoti').click(this.onHiddenDialogNoti.bind(this));
+        $('#btnDuplicate').click(this.onBtnDuplicate.bind(this));
     }
 
     /**
@@ -214,11 +218,14 @@ class BaseJS {
         $(".model").hide();
     }
 
+
+    //TODO: load tên nhân viên muốn xóa lên dialog (Bạn có chắc muốn xóa nhân viên ABC không?)
     /**
      * Hàm show dialog Confirm Delete
      * Author: DVTHANG(04/10/2020)
      * */
     onShowDialogConfirm() {
+        $('#yesNo-question').text("Bạn có chắc muốn xóa nhân viên " + $('.row-selected td:nth-child(2)').text() + " không?");
         $("#dialogConfirm").show();
         $(".model").show();
     }
@@ -243,6 +250,8 @@ class BaseJS {
         $(".model").show();
     }
 
+
+
     /**
      * Hàm sự kiện cho nút Xóa
      * Author: DVTHANG(04/10/2020)
@@ -255,6 +264,8 @@ class BaseJS {
             var noti = "Vui lòng chọn nhân viên muốn xóa!";
             this.onShowDialogNoti(noti);
         } else {
+
+            
             this.onShowDialogConfirm();
         }
     }
@@ -280,7 +291,7 @@ class BaseJS {
             self.loadData();
 
         }).fail(function () {
-            var noti = "Vui lòng kiểm tra lại!";
+            var noti = "Xóa thất bại";
             onShowDialogNoti(noti);
         })
     }
@@ -358,7 +369,8 @@ class BaseJS {
                     $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
                     debugger
                 }).fail(function (response) {
-                    debugger
+                    console.log(response.responseJSON.msg);
+                    self.onShowDialogNoti(response.responseJSON.msg + " " + ". Vui lòng nhập lại!");
                 })
             } else if (this.FormMode == "Edit") {
                 debugger
@@ -375,12 +387,14 @@ class BaseJS {
                         debugger
                     }
                 }).fail(function () {
-                    debugger
+
                 });
             }
             self.onHiddenDialog();
         }
     }
+
+
 
     /**
     * Event của nút Add new
@@ -396,7 +410,8 @@ class BaseJS {
      * */
     showDialog() {
         $('.table-contentInfor input').val(null);  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
-               $("#txtEmployeeCode").val(this.AutoUpperCode);
+        /*        $("#txtEmployeeCode").val(this.AutoUpperCode);*/
+        this.getLastedEmployeeCode();
         $(".employee-background").show();
         $(".model").show();
         $("#txtEmployeeCode").focus();  //khi người dùng ấn vào nút show Dialog, thì sẽ focus luôn vào chỗ nhập text EmployeeCode
@@ -430,55 +445,75 @@ class BaseJS {
     }
 
     /**
-     * Hàm tự động tăng Mã +1
-     * Author: DVTHANG(20/10/2020)
+     * Lấy ra mã nhân viên lớn nhất rồi tăng lên 1
+     * Author: DVTHANG(21/10/2020)
      * */
-    AutoUpperCode() {
-        var temp = $('tbody tr td:nth-child(1)');
-        var tempString = temp[0].textContent;
-        var head = "";
-        var last = "";
-        var chars = [];
-        for (var i = 0; i < tempString.length; i++) {
-            chars.push(tempString[i]);
+    getLastedEmployeeCode() {
+        this.lastedCode = 0;
+        debugger;
+        try {
+            var self = this;
+            $.ajax({
+                url: "/api/Employees",
+                method: "GET",
+                data: "",
+                contentType: "application/json",
+                dataType: "",
+                async: false,
+            }).done(function (object) {
+                self.lastedCode = object[object.length - 1]["employeeCode"];
+                self.lastedCode = self.lastedCode.slice(0, 2) + (parseInt(self.lastedCode.slice(2)) + 1);
+                $('#txtEmployeeCode').val($('#txtEmployeeCode').val() + self.lastedCode);
+                
+            })
+            return self.lastedCode;
+        } catch (e) {
         }
-        $.each(chars, function (i, char) {
-            if ("A" <= char && char <= "Z") {
-                head = head + char;
-            } else {
-                last = last + char;
-            }
-        })
-        var numbers = [];
-        var codeArray = [];
-        var codes = $('tbody tr td:nth-child(1)');
-        $.each(codes, function (codeIndex, code) {
-            codeArray.push(code.innerHTML);
-        })
-        $.each(codeArray, function (index, code) {
-            var n = code.slice(head.length, code.length + 1);
-            var num = Number(n);
-            numbers.push(num);
-        })
-        var x = 1;
-        $.each(numbers, function (i, number) {
-            if (number == x) {
-                x++;
-            } else {
-                return false;
-            }
-        })
-        var s = String(x);
-        var l = last.length - s.length;
-        var newNum = "";
-        if (l > 0) {
-            for (var i = 0; i < l; i++) {
-                newNum = newNum + "0"
-            }
-        }
-        var newCode = head + newNum + x;
-        return newCode;
     }
 
+
+    //TODO: Hoàn thành chức năng Nhân bản
+    /**
+     * Hàm nhân bản 1 bản ghi
+     * Author: DVTHANG(21/10/2020)
+     * */
+    onBtnDuplicate() {
+        var self = this;
+        var id = this.getRecordIdSelected();
+        debugger
+        if (!id) {
+            var noti = "Vui lòng chọn nhân viên muốn nhân bản!";
+            this.onShowDialogNoti(noti);
+        } else {
+            var obj;
+            $.ajax({
+                url: "/api/Employees/" + id,
+                method: "GET",
+                data: "",
+                contentType: "application/json",
+                dataType: "",
+                async:false,
+            }).done(function (object) {
+                debugger
+                object['employeeCode'] = self.getLastedEmployeeCode();
+                obj = object;
+            }).fail(function (response) {
+                debugger
+            })
+            $.ajax({
+                url: "/api/Employees",
+                method: "POST",
+                data: JSON.stringify(obj),
+                contentType: "application/json"
+            }).done(function (response) {
+                self.loadData();
+                debugger
+            }).fail(function (response) {
+                debugger
+            })
+        }
+    }
 }
+
+
 

@@ -26,7 +26,7 @@ namespace MISA.DataAccessLayer.Repository
             return true;
         }
 
-        public bool checkEmployeeByIdentityNumber(string identityNumber)
+       /* public bool checkEmployeeByIdentityNumber(string identityNumber)
         {
             var objectValue = _databaseContext.GetByIdentityCode("PROC_CheckEmployeeIdentityNumber", identityNumber);
             if (objectValue == null)
@@ -40,6 +40,6 @@ namespace MISA.DataAccessLayer.Repository
             if (objectValue == null)
                 return false;
             return true;
-        }
+        }*/
     }
 }

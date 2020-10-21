@@ -20,3 +20,7 @@
         text-align: center;
         padding-right: 10px;
     }
+
+    table tr th {
+        position: sticky;
+    }

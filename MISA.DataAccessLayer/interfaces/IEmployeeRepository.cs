@@ -11,7 +11,7 @@ namespace MISA.DataAccessLayer.interfaces
     /// </summary>
     public interface IEmployeeRepository : IBaseRepository<Employee>
     {
-        
+
         /// <summary>
         ///Kiểm tra thông tin nhân viên theo mã 
         ///Author: DVTHANG(15/10/2020)
@@ -26,7 +26,7 @@ namespace MISA.DataAccessLayer.interfaces
         /// </summary>
         /// <param name="identityNumber">Số chứng minh thư</param>
         /// <returns>true: có, false: không</returns>
-        bool checkEmployeeByIdentityNumber(String identityNumber);
+ /*       bool checkEmployeeByIdentityNumber(String identityNumber);*/
 
         /// <summary>
         ///check trùng số điện thoại 
@@ -34,6 +34,6 @@ namespace MISA.DataAccessLayer.interfaces
         /// </summary>
         /// <param name="phoneNumber">Số điện thoại</param>
         /// <returns>true: có, false: không</returns>
-        bool checkEmployeeByPhoneNumber(String phoneNumber);
+/*        bool checkEmployeeByPhoneNumber(String phoneNumber);*/
     }
 }

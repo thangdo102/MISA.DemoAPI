@@ -419,7 +419,7 @@ label {
 }
 
 #yesNo-question {
-    line-height: 50px;
+    padding-left: 10px;
 }
 
 .dialogConfirm #yesNoImage {
@@ -428,6 +428,14 @@ label {
     height: 40px;
     background-position-y: 13px;
     margin-left: 10px;
+}
+
+.dialogNoti #yesNoImage {
+    background: url("../../content/img/helpnew.png") no-repeat;
+    width: 30px;
+    height: 35px;
+    background-position-y: 5px;
+    margin-left: 8px;
 }
 
 
@@ -460,6 +468,7 @@ label {
     background-color: #ffffff;
     margin: auto;
     margin-top: 9px;
+    display: flex;
 }
 
     .yesNo-Content p {

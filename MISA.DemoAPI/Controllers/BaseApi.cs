@@ -73,9 +73,7 @@ namespace MISA.DemoAPI.Controllers
         public IActionResult Post([FromBody] T entity)
         {
             var serviceResponse = _baseService.Insert(entity);
-            //Nếu data(data ở đây là 1 kiểu object) khác null thì sẽ ép kiểu nó về int, còn nếu null thì là = 0
             var effectRow = serviceResponse.data != null ? (int)serviceResponse.data : 0;
-            Console.WriteLine(entity + "---------------");
             if (effectRow > 0)
                 return CreatedAtAction("POST", effectRow);
             return BadRequest(serviceResponse);

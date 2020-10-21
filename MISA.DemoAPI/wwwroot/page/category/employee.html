@@ -115,60 +115,51 @@
     <div class="main">
 
         <div class="header">
-
-            <div class="header-dropdown-language">
-
-                <select name="#" id="color">
-                    <option value="volvo">Đại dương xanh</option>
-                    <option value="saab">Xanh lá cây</option>
-                    <option value="mercedes">Hồng</option>
-                    <option value="audi">Xanh</option>
-                </select>
-            </div>
-
-            <div class="header-space">
-            </div>
-
-
-            <div class="header-dropdown-language2">
-                <select name="#" id="color">
-                    <option value="volvo">Tiếng Việt(Tiếng Việt)</option>
-                    <option value="saab">Tiếng Nhật</option>
-                    <option value="mercedes">Tiếng Campuchia</option>
-                    <option value="audi">Tiếng Lào</option>
-                </select>
-            </div>
-
-            <div class="header-iconGlobal">
-                <i class="fa fa-globe" aria-hidden="true" style="font-size:30px;"></i>
-            </div>
-
-            <!--<div class="header-question">-->
-                <!--<img src="/content/img/logoMisa.png" />-->
-            <!--</div>-->
-
-
-            <div class="header-phone">
-                <!--<img src="/content/img/vector-smart-object.png" />-->
-
-            </div>
-
-
-            <div class="header-user">
-                <div class="header-user-avatar">
-                    <img src="/content/img/EmployeeImage.png" />
-                </div>
-                <div class="header-user-name">
+            <div class="header-left">
+                <div class="header-dropdown-language">
                     <select name="#" id="color">
-                        <option value="volvo">Đỗ Văn Thắng</option>
-                        <option value="saab"></option>
-                        <option value="mercedes"></option>
-                        <option value="audi"></option>
+                        <option value="volvo">Đại dương xanh</option>
+                        <option value="saab">Xanh lá cây</option>
+                        <option value="mercedes">Hồng</option>
+                        <option value="audi">Xanh</option>
                     </select>
-
                 </div>
             </div>
 
+            <div class="header-right">
+                <div class="header-right-left">
+                    <div class="header-dropdown-language2">
+                        <select name="#" id="color">
+                            <option value="volvo">Tiếng Việt(Tiếng Việt)</option>
+                            <option value="saab">Tiếng Nhật</option>
+                            <option value="mercedes">Tiếng Campuchia</option>
+                            <option value="audi">Tiếng Lào</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="header-right-right">
+                    <div class="header-iconGlobal">
+                        <i class="fa fa-globe" aria-hidden="true" style="font-size:30px;"></i>
+                    </div>
+                    <div class="header-phone">
+                        <!--<img src="/content/img/vector-smart-object.png" />-->
+                    </div>
+                    <div class="header-user">
+                        <div class="header-user-avatar">
+                            <img src="/content/img/EmployeeImage.png" />
+                        </div>
+                        <div class="header-user-name">
+                            <select name="#" id="color">
+                                <option value="volvo">Đỗ Văn Thắng</option>
+                                <option value="saab"></option>
+                                <option value="mercedes"></option>
+                                <option value="audi"></option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -194,7 +185,7 @@
                         Thêm
                     </button>
 
-                    <button class="table-header-button">
+                    <button class="table-header-button" id="btnDuplicate">
                         <i class="repli-icon"></i>
                         Nhân bản
                     </button>
@@ -469,7 +460,7 @@
 
             <div class="yesNo-Content">
                 <div id="yesNoImage"></div>
-                <a id="yesNo-question">Bạn có chắc muốn xóa Nhân viên này không?</a>
+                <p id="yesNo-question">Bạn có chắc muốn xóa Nhân viên không?</p>
             </div>
 
             <div class="yesNo-footer">
@@ -481,11 +472,12 @@
     </div>
 
     <!--Dialog nhắc nhở chưa chọn row để xóa-->
-    <div id="dialogNoti" title="CUKCUK - Quản lý nhà hàng">
+    <div class="dialogNoti" id="dialogNoti" title="CUKCUK - Quản lý nhà hàng">
         <div class="model"></div>
         <div class="yesNo-backgroundNoti">
             <div class="yesNo-headerNoti">CUKCUK - Quản lý nhà hàng</div>
             <div class="yesNo-ContentNoti">
+                <div id="yesNoImage"></div>
                 <a id="yesNo-questionNoti"><span id="mySpan"></span></a>
             </div>
             <div class="yesNo-footerNoti">
@@ -493,22 +485,6 @@
             </div>
         </div>
     </div>
-
-    <!--Dialog nhắc nhở chưa chọn row để sửa-->
-<!--    <div id="dialogNotiEdit" title="CUKCUK - Quản lý nhà hàng">
-        <div class="model"></div>
-        <div class="yesNo-backgroundNoti">
-            <div class="yesNo-headerNoti">CUKCUK - Quản lý nhà hàng</div>
-            <div class="yesNo-ContentNoti">
-                <a id="yesNo-questionNoti"><span id="mySpan"></span></a>
-            </div>
-            <div class="yesNo-footerNoti">
-                <button class="yesNo-buttonNoti" id="buttonCloseNotiEdit">Đóng</button>
-            </div>
-        </div>
-    </div>-->
-
-
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/helper/common.js"></script>
     <script src="/js/helper/validate.js"></script>
