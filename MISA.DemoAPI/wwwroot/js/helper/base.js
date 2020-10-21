@@ -6,9 +6,13 @@
  * Class EmployeeJS dùng để quản lý các function
  * Author: DVTHANG(23/09/2020)
  * */
+
 class BaseJS {
 
-
+    /**
+     * Constructor của class
+     * Author: DVTHANG(23/09/2020)
+     * */
     constructor() {
         this.loadData();
         this.loadDepartment();
@@ -172,7 +176,6 @@ class BaseJS {
         //Lấy dữ liệu của nhân viên tương ứng đã chọn:
         //1. Xác định nhân viên nào được chọn:
         var recordSelected = $('#tbListData tbody tr.row-selected');
-
         if (recordSelected.length > 0) {
             self.FormMode = "Edit";
             //2. Lấy thông tin Mã nhân viên:
@@ -198,11 +201,9 @@ class BaseJS {
                     else {
                         field.value = object[fieldName];
                     }
-
                 })
             }).fail(function (response) {
             })
-
         } else {
             var noti = "Vui lòng chọn row để sửa!";
             this.onShowDialogNoti(noti);
@@ -257,15 +258,11 @@ class BaseJS {
      * Author: DVTHANG(04/10/2020)
      * */
     btnDeleteOnClick() {
-        /*var self = this;*/
-        //Lấy id của bản ghi được chọn
         var id = this.getRecordIdSelected();
         if (!id) {
             var noti = "Vui lòng chọn nhân viên muốn xóa!";
             this.onShowDialogNoti(noti);
         } else {
-
-            
             this.onShowDialogConfirm();
         }
     }
@@ -319,14 +316,13 @@ class BaseJS {
         var idSelected = this.getRecordIdSelected();
         var inputRequireds = $("input[required]");  //các input có cùng thuộc tính required
         var emailCheck = $("input[emailCheck]"); //lấy các input có thuộc tính là emailCheck 
-        var inputEmail = $(emailCheck).val();   //lấy ra value của input email
-
         var isValid = true;  //biến check valid của input required
-        var isValidEmail = true;  //biến check valid của email input 
         $.each(inputRequireds, function (index, input) {
             var valid = $(input).trigger("blur");
             if (isValid && valid.hasClass("require-error")) {
                 isValid = false;
+                var str = "Các trường có dấu (*) không được để trống!";
+                self.onShowDialogNoti(str);
             }
         })
         //nếu required input và email input hợp lệ thì sẽ tiến thành các bước tiếp theo
@@ -464,7 +460,7 @@ class BaseJS {
                 self.lastedCode = object[object.length - 1]["employeeCode"];
                 self.lastedCode = self.lastedCode.slice(0, 2) + (parseInt(self.lastedCode.slice(2)) + 1);
                 $('#txtEmployeeCode').val($('#txtEmployeeCode').val() + self.lastedCode);
-                
+
             })
             return self.lastedCode;
         } catch (e) {
@@ -492,7 +488,7 @@ class BaseJS {
                 data: "",
                 contentType: "application/json",
                 dataType: "",
-                async:false,
+                async: false,
             }).done(function (object) {
                 debugger
                 object['employeeCode'] = self.getLastedEmployeeCode();

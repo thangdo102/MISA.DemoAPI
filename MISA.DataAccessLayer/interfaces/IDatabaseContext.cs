@@ -56,7 +56,6 @@ namespace MISA.DataAccessLayer.interfaces
         /// <returns></returns>
         object GetByPhoneNumber(String storeName, String phoneNumber);
 
-
         /// <summary>
         /// Thêm mới một đối tượng
         /// AUTHOR: DVTHANG(15/10/2020)

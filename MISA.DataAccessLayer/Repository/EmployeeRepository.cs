@@ -18,6 +18,13 @@ namespace MISA.DataAccessLayer.Repository
         {
         }
 
+
+        /// <summary>
+        /// Hàm check trùng Code
+        /// Author: DVTHANG(21/10/2020)
+        /// </summary>
+        /// <param name="employeeCode">Employee Code</param>
+        /// <returns></returns>
         public bool checkEmployeeByCode(string employeeCode)
         {
             var objectValue = _databaseContext.Get("PROC_CheckEmployeeCode", employeeCode);
@@ -25,21 +32,5 @@ namespace MISA.DataAccessLayer.Repository
                 return false;
             return true;
         }
-
-       /* public bool checkEmployeeByIdentityNumber(string identityNumber)
-        {
-            var objectValue = _databaseContext.GetByIdentityCode("PROC_CheckEmployeeIdentityNumber", identityNumber);
-            if (objectValue == null)
-                return false;
-            return true;
-        }
-
-        public bool checkEmployeeByPhoneNumber(string phoneNumber)
-        {
-            var objectValue = _databaseContext.GetByPhoneNumber("PROC_CheckEmployeePhoneNumber", phoneNumber);
-            if (objectValue == null)
-                return false;
-            return true;
-        }*/
     }
 }

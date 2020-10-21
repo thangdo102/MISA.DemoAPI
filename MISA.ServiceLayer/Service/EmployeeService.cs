@@ -37,16 +37,11 @@ namespace MISA.BusinessLayer.Service
             return _employeeRepository.checkEmployeeByCode(employeeCode);
         }
 
-        /* public bool checkEmployeeByIdentityNumber(string identityNumber)
-         {
-             return _employeeRepository.checkEmployeeByIdentityNumber(identityNumber);
-         }
-
-         public bool checkEmployeeByPhoneNumber(string phoneNumber)
-         {
-             return _employeeRepository.checkEmployeeByPhoneNumber(phoneNumber);
-         }*/
-
+        /// <summary>
+        /// Hàm check trùng Code 
+        /// </summary>
+        /// <param name="entity">Đối tượng của Employee</param>
+        /// <returns></returns>
         protected override bool ValidateData(Employee entity)
         {
             var isValid = true;
@@ -57,24 +52,6 @@ namespace MISA.BusinessLayer.Service
                 isValid = false;
                 ValidateErrorResponseMsg.Add("Mã bị trùng");
             }
-
-            //check trùng số cmt, bên dưới sẽ check các kiểu giống check mã ở phía trên.
-            //Cứ mỗi lần mã, số điện thoại hay số CMT bị trùng, thì lại add 1 string vào chuỗi string chứa các lỗi để hiển thị ra view cho người dùng xem
-           /* var isValidExistIdentity = checkEmployeeByIdentityNumber(entity.IdentityNumber);
-            if (isValidExistIdentity)
-            {
-                isValid = false;
-                ValidateErrorResponseMsg.Add("số CMT bị trùng");
-            }
-
-            //check trùng số điện thoại
-            var isValidExistPhoneNumber = checkEmployeeByPhoneNumber(entity.PhoneNumber);
-            if (isValidExistPhoneNumber)
-            {
-                isValid = false;
-                ValidateErrorResponseMsg.Add("Số điện thoại bị trùng");
-            }*/
-
             return isValid;  //return false là ko trùng, true là trùng
         }
         #endregion

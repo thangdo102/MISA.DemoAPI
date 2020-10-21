@@ -87,27 +87,6 @@
                 <div class="menu-item-icon-app"></div>
                 <div class="menu-item-text">Ứng dụng</div>
             </div>
-
-            <!--<div class="menu-item">
-                <div class="menu-item-icon-online"></div>
-                <div class="menu-item-text">Bán hàng Online</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-icon-food"></div>
-                <div class="menu-item-text-food">5Food</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-icon-help"></div>
-                <div class="menu-item-text-help">Trợ giúp</div>
-                <div class="menu-item-icon-listdown"></div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-icon-phone"></div>
-                <div class="menu-item-text-phone">Thuê bao</div>
-            </div>-->
         </div>
 
     </div>
@@ -256,18 +235,12 @@
 
                     <button class="footer-backIcon1"></button>
                     <button class="footer-backIcon2"></button>
-                    <!--<div class="footer-seperate"><a>|</a></div>-->
                     <div class="footer-text1">Trang</div>
                     <div class="footer-input"><input id="inputNumberOfPage" type="text" /></div>
                     <div class="footer-text1">trên 1</div>
-                    <!--<div class="footer-seperate"><a>|</a></div>-->
-
                     <button class="footer-nextIcon1"></button>
                     <button class="footer-nextIcon2"></button>
-                    <!--<div class="footer-seperate"><a>|</a></div>-->
-
                     <button class="footer-loadIcon"></button>
-                    <!--<div class="footer-seperate"><a>|</a></div>-->
                     <div class="footer-text3">Số bản ghi</div>
                     <div>
                         <select name="cars" id="cars">
@@ -348,7 +321,19 @@
                                 </table>
                             </div>
                             <div class="infoInput-imgCommon">
-                                <div class="infoInput-img">Image</div>
+                                <div class="infoInput-img">
+                                    <div class="imageUser">
+                                        <img style="margin-top: 21px;" src="/content/img/default-user.png" />
+                                    </div>
+                                    <div class="buttonPick" style="display: flex;">
+                                        <button class="buttonImage">
+                                            <span id="spanButton">. . .</span>
+                                        </button>
+                                        <button class="buttonImage">
+                                            <div id="cancelImage"></div>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="infoInput-textImage">Chỉ được upload tệp<span id="spanImage">.jpg .jpeg .png .gif</span></div>
                             </div>
 
@@ -361,7 +346,6 @@
                                 <td style="width: 116px">Vị trí</td>
                                 <td>
                                     <select fieldName="positionId" class="inputSelected" id="positionName" name="departmentName">
-                                        <!--<option value="s">Select</option>-->
                                     </select>
                                 </td>
                             </tr>
@@ -369,8 +353,6 @@
                                 <td>Phòng ban</td>
                                 <td>
                                     <select fieldName="departmentId" class="inputSelected" id="departmentName" name="departmentName">
-
-                                        <!--<option value="s">Select</option>-->
                                     </select>
                                 </td>
                             </tr>
@@ -397,35 +379,7 @@
                                 </td>
                             </tr>
                         </table>
-
-
                     </div>
-
-
-                    <!--<div class="table-footer">
-                        <button class="footer-help">
-                            <div class="footer-help-icon"></div>
-                            <div class="footer-help-text">Giúp</div>
-                        </button>
-                        <div class="footer-space-text"></div>
-
-
-
-                        <button class="footer-cut" id="btnAddNew">
-
-                            <div class="footer-cut-icon"></div>
-                            <div class="footer-cut-text">Cất</div>
-                        </button>
-                        <button class="footer-add">
-                            <div class="footer-add-icon"></div>
-                            <div class="footer-add-text">Cất & Thêm</div>
-                        </button>
-                        <button class="footer-cancel" id="buttonCancel">
-                            <div class="footer-cancel-icon"></div>
-                            <div class="footer-cancel-text">Hủy bỏ</div>
-                        </button>
-                    </div>-->
-
                     <div class="dialog-footer">
                         <button class="footer-help">
                             <div class="footer-help-icon"></div>
@@ -481,7 +435,7 @@
                 <a id="yesNo-questionNoti"><span id="mySpan"></span></a>
             </div>
             <div class="yesNo-footerNoti">
-                <button class="yesNo-buttonNoti" id="buttonCloseNoti">Đóng</button>
+                <button class="yesNo-buttonNoti" id="buttonCloseNoti">Đồng ý</button>
             </div>
         </div>
     </div>
