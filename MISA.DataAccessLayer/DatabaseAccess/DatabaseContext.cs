@@ -32,6 +32,12 @@ namespace MISA.DataAccessLayer.DatabaseAccess
         #endregion
 
         #region method
+
+        /// <summary>
+        /// Hàm lấy danh sách các object dùng chung
+        /// Author: DVTHANG(20/10/2020)
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<T> Get()
         {
             var entities = new List<T>();
@@ -41,7 +47,6 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             MySqlDataReader mySqlDataReader = _sqlCommand.ExecuteReader();   //là đối tượng để xử lí việc đọc dữ liệu, reader là đọc lần lượt từng dòng một, hết dòng 1 sẽ xuống dòng 2
             while (mySqlDataReader.Read())  //vòng lặp đọc từng hàng dữ liệu một lần
             {
-
                 var entity = Activator.CreateInstance<T>();
 
                 for (int i = 0; i < mySqlDataReader.FieldCount; i++)  //vòng lặp đọc từng ô trong hàng  
@@ -193,18 +198,12 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             _sqlConnection.Close();
         }
 
-        /* public bool checkEmployeeByCode(string employeeCode)
-         {
-             //Khai báo câu lệnh truy vấn
-             _sqlCommand.CommandText = "PROC_GetEmployeeByCode";
-             _sqlCommand.Parameters.AddWithValue("@EmployeeCode", employeeCode);
-             var mySQLDataValue = _sqlCommand.ExecuteScalar();
-             if (mySQLDataValue == null)
-                 return false;
-             return true;
-         }*/
-
-        //check ko được trùng EmployeeCode
+        /// <summary>
+        /// Hàm check ko được trùng EmployeeCode
+        /// </summary>
+        /// <param name="storeName">Tên Store</param>
+        /// <param name="code">Code truyền vào</param>
+        /// <returns></returns>
         public object Get(string storeName, string code)
         {
             _sqlCommand.Parameters.Clear();
@@ -213,25 +212,6 @@ namespace MISA.DataAccessLayer.DatabaseAccess
             // Thực hiện đọc dữ liệu:
             return _sqlCommand.ExecuteScalar();
         }
-
-        public object GetByIdentityCode(string storeName, string identityNumber)
-        {
-            _sqlCommand.Parameters.Clear();
-            _sqlCommand.CommandText = storeName;
-            _sqlCommand.Parameters.AddWithValue("@IdentityNumber", identityNumber);
-            // Thực hiện đọc dữ liệu:
-            return _sqlCommand.ExecuteScalar();
-        }
-
-        public object GetByPhoneNumber(string storeName, string phoneNumber)
-        {
-            _sqlCommand.Parameters.Clear();
-            _sqlCommand.CommandText = storeName;
-            _sqlCommand.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-            // Thực hiện đọc dữ liệu:
-            return _sqlCommand.ExecuteScalar();
-        }
-
         #endregion
     }
 }

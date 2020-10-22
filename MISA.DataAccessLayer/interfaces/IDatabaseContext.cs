@@ -27,8 +27,6 @@ namespace MISA.DataAccessLayer.interfaces
         /// <returns></returns>
         T GetById(Guid entityId);
 
-
-
         /// <summary>
         /// Hàm lấy đối tượng tương ứng với procedures
         /// AUTHOR: DVTHANG(15/10/2020)
@@ -37,24 +35,6 @@ namespace MISA.DataAccessLayer.interfaces
         /// <param name="code">Code của đối tượng cần lấy</param>
         /// <returns></returns>
         object Get(String storeName, String code);
-
-        /// <summary>
-        /// Hàm lấy đối tượng tương ứng với procedures
-        /// AUTHOR: DVTHANG(15/10/2020)
-        /// </summary>
-        /// <param name="storeName">Procedure để get đối tượng by Code</param>
-        /// <param name="identityNumber">identityNumber của đối tượng cần lấy</param>
-        /// <returns></returns>
-        object GetByIdentityCode(String storeName, String identityNumber);
-
-        /// <summary>
-        /// Hàm lấy đối tượng tương ứng với procedures
-        /// AUTHOR: DVTHANG(15/10/2020)
-        /// </summary>
-        /// <param name="storeName">Procedure để get đối tượng by Code</param>
-        /// <param name="phoneNumber">Phone number của đối tượng cần lấy</param>
-        /// <returns></returns>
-        object GetByPhoneNumber(String storeName, String phoneNumber);
 
         /// <summary>
         /// Thêm mới một đối tượng

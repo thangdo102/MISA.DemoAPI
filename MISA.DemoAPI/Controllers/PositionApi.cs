@@ -11,6 +11,10 @@ using MySqlConnector;
 
 namespace MISA.DemoAPI.Controllers
 {
+    /// <summary>
+    /// Api controller của Position
+    /// Author: DVTHANG(16/10/2020)
+    /// </summary>
     [Route("api/positions")]
     public class PositionApi : BaseApi<Position>
     {

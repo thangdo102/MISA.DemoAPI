@@ -22,7 +22,7 @@
 
         <div class="menu">
 
-            <a href="customer.html" class="menu-item">
+            <a class="menu-item">
                 <div class="menu-item-icon"></div>
                 <div class="menu-item-text">Khách hàng</div>
             </a>
@@ -30,7 +30,7 @@
             <a href="employee.html" class="menu-item">
                 <div class="menu-item-icon-report"></div>
                 <div class="menu-item-text">Nhân viên</div>
-                <div class="menu-item-icon-listdown"></div>
+               <!-- <div class="menu-item-icon-listdown"></div>-->
             </a>
 
             <div class="menu-item">
@@ -50,43 +50,43 @@
 
             <div class="menu-item">
                 <div class="menu-item-icon-monney2"></div>
-                <div class="menu-item-text-monney2">Quỹ tiền gửi</div>
+                <div class="menu-item-text-monney2">Khuyến mãi</div>
             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-cost"></div>
-                <div class="menu-item-text-cost">Chi phí</div>
-            </div>
+            <!-- <div class="menu-item">
+                 <div class="menu-item-icon-cost"></div>
+                 <div class="menu-item-text-cost">Chi phí</div>
+             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-sale"></div>
-                <div class="menu-item-text">Khuyến mại</div>
-            </div>
+             <div class="menu-item">
+                 <div class="menu-item-icon-sale"></div>
+                 <div class="menu-item-text">Khuyến mại</div>
+             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-menu"></div>
-                <div class="menu-item-text-menu">Thực đơn</div>
-            </div>
+             <div class="menu-item">
+                 <div class="menu-item-icon-menu"></div>
+                 <div class="menu-item-text-menu">Thực đơn</div>
+             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-cate"></div>
-                <div class="menu-item-text">Danh mục</div>
-            </div>
+             <div class="menu-item">
+                 <div class="menu-item-icon-cate"></div>
+                 <div class="menu-item-text">Danh mục</div>
+             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-bill"></div>
-                <div class="menu-item-text-bill">Hủy hóa đơn</div>
-            </div>
+             <div class="menu-item">
+                 <div class="menu-item-icon-bill"></div>
+                 <div class="menu-item-text-bill">Hủy hóa đơn</div>
+             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-system"></div>
-                <div class="menu-item-text">Thiết lập hệ thống</div>
-            </div>
+             <div class="menu-item">
+                 <div class="menu-item-icon-system"></div>
+                 <div class="menu-item-text">Thiết lập hệ thống</div>
+             </div>
 
-            <div class="menu-item">
-                <div class="menu-item-icon-app"></div>
-                <div class="menu-item-text">Ứng dụng</div>
-            </div>
+             <div class="menu-item">
+                 <div class="menu-item-icon-app"></div>
+                 <div class="menu-item-text">Ứng dụng</div>
+             </div>-->
         </div>
 
     </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="header-right-right">
                     <div class="header-iconGlobal">
-                        <i class="fa fa-globe" aria-hidden="true" style="font-size:30px;"></i>
+                        <i class="fa fa-globe" aria-hidden="true" style="font-size:30px;color: white;"></i>
                     </div>
                     <div class="header-phone">
                         <!--<img src="/content/img/vector-smart-object.png" />-->
@@ -185,27 +185,6 @@
                         Nạp
                     </button>
 
-                    <!--    <div class="table-header-seperate"> | </div>-->
-
-
-                    <button class="table-header-button" id="nhapkhau">
-                        <i class="input-icon"></i>
-                        Nhập khẩu
-                    </button>
-
-                    <button class="table-header-button">
-                        <i class="output-icon"></i>
-                        Xuất khẩu
-                    </button>
-
-                    <!--<div class="table-header-seperate">|</div>-->
-
-
-                    <button class="table-header-button">
-                        <i class="help-icon"></i>
-                        Help
-                    </button>
-
                 </div>
 
                 <div class="content-table-main">
@@ -213,7 +192,7 @@
                         <thead>
                             <tr>
                                 <th fieldName="employeeCode" format="validateString">Mã nhân viên</th>
-                                <th fieldName="employeeName" title="With channels in Slack, you and your team know where to go to ask questions, share updates and stay in the loop." format="validateString">Tên nhân viên....</th>
+                                <th fieldName="employeeName" format="validateString">Tên nhân viên</th>
                                 <th fieldName="genderName" format="validateString">Giới tính</th>
                                 <th fieldName="dateOfBirth" format="validateDate" formatDate="date">Ngày sinh</th>
                                 <th fieldName="phoneNumber" format="validateString">Số điện thoại</th>
@@ -290,7 +269,7 @@
                                     </tr>
                                     <tr>
                                         <td>Ngày sinh</td>
-                                        <td><input format="date" fieldName="dateOfBirth" style="width: 89%" type="date" /></td>
+                                        <td><input format="date" fieldName="dateOfBirth" style="width: 89%; text-align: center;" type="date" /></td>
                                         <td>Giới tính</td>
                                         <td>
                                             <select fieldName="gender" style="width: 95.8%; height: 25px; outline: none; border-color: #cacac7;" id="gender">
@@ -312,7 +291,7 @@
                                         <td>Số CMT</td>
                                         <td><input fieldName="identityNumber" style="width: 89%;" type="text" /></td>
                                         <td>Ngày cấp</td>
-                                        <td><input format="date" fieldName="identityDate" style="width: 89.7%" type="date" /></td>
+                                        <td><input format="date" fieldName="identityDate" style="width: 89.7%;text-align: center" type="date" /></td>
                                     </tr>
                                     <tr>
                                         <td>Nơi cấp CMT</td>
@@ -360,11 +339,11 @@
                                 <td>Mã số thuế cá nhân</td>
                                 <td style="width:29%"><input fieldName="taxCode" type="text" class="infoInput-text2" /></td>
                                 <td style="width: 67px">Mức lương</td>
-                                <td><input fieldName="salary" format="money" style="width: 97.6%" type="text" class="infoInput-text2" /></td>
+                                <td><input fieldName="salary" format="money" placeholder="VNĐ" style="width: 97.6%;text-align: right" type="text" class="infoInput-text2" /></td>
                             </tr>
                             <tr>
                                 <td>Ngày gia nhập</td>
-                                <td><input fieldName="joinDate" format="date" class="infoInput-text2" type="date" /></td>
+                                <td><input fieldName="joinDate" format="date" style="text-align: center" class="infoInput-text2" type="date" /></td>
                                 <td>Tình trạng</td>
                                 <td>
                                     <select fieldName="workStatus" style="width: 100.7%" class="workStatus" id="workStatus">

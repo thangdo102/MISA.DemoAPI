@@ -31,6 +31,12 @@ namespace MISA.DataAccessLayer
         }
         #endregion
 
+        /// <summary>
+        /// Xóa 1 nhân viên theo Id
+        /// AUTHOR: DVTHANG(13/10/2020)
+        /// </summary>
+        /// <param name="employeeId"> id của nhân viên</param>
+        // DELETE api/<EmployeeApi>/5
         #region method
         public int Delete(Guid employeeId)
         {
@@ -41,7 +47,12 @@ namespace MISA.DataAccessLayer
             return affectRows;
 
         }
-
+        /// <summary>
+        /// Hàm lấy thông tin nhân viên theo Id
+        /// Author: DVTHANG(14/10/2020)
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <returns></returns>
         public Employee GetById(Guid employeeId)
         {
             //Khai báo câu lệnh truy vấn
@@ -70,6 +81,11 @@ namespace MISA.DataAccessLayer
             return null;
         }
 
+        /// <summary>
+        /// Hàm lấy danh sách các object dùng chung
+        /// Author: DVTHANG(20/10/2020)
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Employee> Get()
         {
             var employees = new List<Employee>();
@@ -105,6 +121,12 @@ namespace MISA.DataAccessLayer
             return employees;
         }
 
+        /// <summary>
+        ///  Hàm thêm mới dùng chung cho các entity
+        /// Author: DVTHANG(14/10/2020)
+        /// </summary>
+        /// <param name="entity">đại diện cho các entity</param>
+        /// <returns></returns>
         public int Insert(Employee employee)
         {
             //dùng để sử dụng Procedures
@@ -133,6 +155,10 @@ namespace MISA.DataAccessLayer
             return affectRows;
         }
 
+        /// <summary>
+        /// Update entity
+        /// AUTHOR: DVTHANG(13/10/2020)
+        /// </summary>
         public int update(Employee employee, Guid id)
         {
             _sqlCommand.CommandText = "PROC_UpdateEmployee";
@@ -162,27 +188,24 @@ namespace MISA.DataAccessLayer
             return affectRows;
         }
 
+        /// <summary>
+        /// Hàm kế thừa từ interface IDisposable, khi chạy xong thì sẽ tự động chạy vào hàm này, lợi dụng điều đó để cho nó thực hiện đóng connection luôn
+        /// Author: DVTHANG(14/10/2020)
+        /// </summary>
         public void Dispose()
         {
             _sqlConnection.Close();
         }
 
-        public bool checkEmployeeByCode(string employeeCode)
-        {
-            throw new NotImplementedException();
-        }
 
+
+        /// <summary>
+        /// Hàm check ko được trùng EmployeeCode
+        /// </summary>
+        /// <param name="storeName">Tên Store</param>
+        /// <param name="code">Code truyền vào</param>
+        /// <returns></returns>
         public object Get(string storeName, string code)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object GetByIdentityCode(string storeName, string identityNumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object GetByPhoneNumber(string storeName, string phoneNumber)
         {
             throw new NotImplementedException();
         }

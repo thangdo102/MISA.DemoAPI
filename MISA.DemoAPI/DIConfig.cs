@@ -18,6 +18,11 @@ namespace MISA.DemoAPI
     ///</summary>
     public class DIConfig
     {
+        /// <summary>
+        /// Hàm để config các Interface với các class
+        /// Author: DVTHANG(20/10/2020)
+        /// </summary>
+        /// <param name="services">Kiểu của Collection</param>
         public static void InjectionConfig(IServiceCollection services)
         {
             

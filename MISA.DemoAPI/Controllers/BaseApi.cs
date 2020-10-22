@@ -92,7 +92,7 @@ namespace MISA.DemoAPI.Controllers
         {
             var effectRow = _baseService.update(entity, id);
             if (effectRow > 0)
-                return CreatedAtAction("PUT", effectRow);
+                return Ok(effectRow);
             else
                 return BadRequest();
         }
@@ -108,7 +108,7 @@ namespace MISA.DemoAPI.Controllers
         {
             var effectRow = _baseService.Delete(entityId);
             if (effectRow > 0)
-                return CreatedAtAction("DELETE", effectRow);
+                return Ok(effectRow);
             else
                 return BadRequest();
         }

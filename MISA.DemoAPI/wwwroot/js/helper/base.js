@@ -1,6 +1,4 @@
 ﻿$(document).ready(function () {
-    //load dữ liệu
-
 })
 /**
  * Class EmployeeJS dùng để quản lý các function
@@ -40,7 +38,6 @@ class BaseJS {
     *  Author: DVTHANG(23/09/2020)
     * */
     loadData() {
-        debugger
         //Lấy dữ liệu trên server thông qua lời gọi tới api service:
         $.ajax({
             url: this.getUrl(),
@@ -50,7 +47,6 @@ class BaseJS {
             dataType: ""
 
         }).done(function (response) {
-            debugger
             var fields = $('table#tbListData thead th');  //lấy tất cả các th  
             $('#tbListData tbody').empty();
             $.each(response, function (index, obj) {   //duyệt từng phần tử của mảng các đối tượng 
@@ -100,7 +96,6 @@ class BaseJS {
         var rowId = null;
         var recordSelected = $('#tbListData tbody .row-selected');
         //Lấy dữ liệu chi tiết của bản ghi đó
-        debugger
         if (recordSelected.length > 0) {
             rowId = $(recordSelected).data("keyId");
         }
@@ -327,7 +322,6 @@ class BaseJS {
         })
         //nếu required input và email input hợp lệ thì sẽ tiến thành các bước tiếp theo
         if (isValid) {
-            debugger
             //2. Build object cần lưu:
             var inputs = $('input[fieldName]');
             var selects = $('select[fieldName]');
@@ -351,9 +345,7 @@ class BaseJS {
                 }
                 object[fieldName] = value;
             })
-            debugger
             if (this.FormMode == "Add") {
-                debugger
                 $.ajax({
                     url: this.getUrl(),
                     method: "POST",
@@ -363,13 +355,11 @@ class BaseJS {
                     self.loadData();
                     self.FormMode = null;
                     $('.table-contentInfor input').val(" ");  //khi thêm dữ liệu lên bảng thì set các input thành khoảng trắng
-                    debugger
                 }).fail(function (response) {
                     console.log(response.responseJSON.msg);
-                    self.onShowDialogNoti(response.responseJSON.msg + " " + ". Vui lòng nhập lại!");
+                    self.onShowDialogNoti(response.responseJSON.msg + "" + ". Vui lòng nhập lại!");
                 })
             } else if (this.FormMode == "Edit") {
-                debugger
                 $.ajax({
                     url: "/api/Employees/" + idSelected,
                     method: "PUT",
@@ -380,7 +370,6 @@ class BaseJS {
                     if (response) {
                         self.loadData();
                         self.FormMode = null;
-                        debugger
                     }
                 }).fail(function () {
 
@@ -446,7 +435,6 @@ class BaseJS {
      * */
     getLastedEmployeeCode() {
         this.lastedCode = 0;
-        debugger;
         try {
             var self = this;
             $.ajax({
@@ -468,7 +456,7 @@ class BaseJS {
     }
 
 
-    //TODO: Hoàn thành chức năng Nhân bản
+    //TODO: Đã hoàn thành chức năng Nhân bản
     /**
      * Hàm nhân bản 1 bản ghi
      * Author: DVTHANG(21/10/2020)
@@ -476,7 +464,6 @@ class BaseJS {
     onBtnDuplicate() {
         var self = this;
         var id = this.getRecordIdSelected();
-        debugger
         if (!id) {
             var noti = "Vui lòng chọn nhân viên muốn nhân bản!";
             this.onShowDialogNoti(noti);
@@ -490,11 +477,9 @@ class BaseJS {
                 dataType: "",
                 async: false,
             }).done(function (object) {
-                debugger
                 object['employeeCode'] = self.getLastedEmployeeCode();
                 obj = object;
             }).fail(function (response) {
-                debugger
             })
             $.ajax({
                 url: "/api/Employees",
@@ -503,9 +488,7 @@ class BaseJS {
                 contentType: "application/json"
             }).done(function (response) {
                 self.loadData();
-                debugger
             }).fail(function (response) {
-                debugger
             })
         }
     }
